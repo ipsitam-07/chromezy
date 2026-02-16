@@ -1,0 +1,264 @@
+"use client";
+
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import ProductEngineering from "./ProductEngineering";
+
+export const HomeClient = () => {
+  const { scrollY } = useScroll();
+  const [viewportHeight, setViewportHeight] = useState(1000);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setViewportHeight(window.innerHeight);
+    }
+  }, []);
+
+  const x = useTransform(
+    scrollY,
+    [
+      0,
+      viewportHeight,
+      viewportHeight * 4,
+      viewportHeight * 5,
+      viewportHeight * 6,
+    ],
+    [600, 424, 424, 0, -100]
+  );
+
+  const y = useTransform(
+    scrollY,
+    [
+      0,
+      viewportHeight,
+      viewportHeight + viewportHeight / 4,
+      viewportHeight * 2,
+      viewportHeight * 3,
+      viewportHeight * 4,
+      viewportHeight * 4 + viewportHeight / 2,
+      viewportHeight * 6,
+    ],
+    [
+      60,
+      60 + 121,
+      60 + 121,
+      60 + 121 - 300,
+      60 + 121 - 100,
+      60 + 121 - 100 + 20,
+      60 + 121 - 100 + 20 + 400,
+      50,
+    ]
+  );
+
+  const scale = useTransform(
+    scrollY,
+    [
+      viewportHeight,
+      viewportHeight + viewportHeight / 4,
+      viewportHeight * 2,
+      viewportHeight * 3,
+      viewportHeight * 4,
+      viewportHeight * 5,
+    ],
+    [1, 2, 1, 1.9, 2.5, 1]
+  );
+
+  const ballOpacity = useTransform(
+    scrollY,
+    [
+      viewportHeight * 3,
+      viewportHeight * 3 + viewportHeight / 2,
+      viewportHeight * 5,
+      viewportHeight * 6,
+      viewportHeight * 7,
+    ],
+    [1, 0.15, 1, 1, 0]
+  );
+
+  const ballBlur = useTransform(
+    scrollY,
+    [viewportHeight + viewportHeight / 4, viewportHeight * 2],
+    ["blur(0px)", "blur(10px)"]
+  );
+
+  const textOpacity = useTransform(scrollY, [0, viewportHeight * 1.5], [1, 0]);
+
+  const yTransformHeader = useTransform(
+    scrollY,
+    [0, viewportHeight],
+    [0, -100]
+  );
+
+  const yTransformSubheading = useTransform(
+    scrollY,
+    [0, viewportHeight],
+    [0, -150]
+  );
+
+  const yTransformParagraph = useTransform(
+    scrollY,
+    [0, viewportHeight],
+    [0, -200]
+  );
+
+  const yTransformStats = useTransform(scrollY, [0, viewportHeight], [0, -250]);
+
+  const triangleY = useTransform(
+    scrollY,
+    [
+      0,
+      viewportHeight,
+      viewportHeight + viewportHeight / 4,
+      viewportHeight * 2,
+    ],
+    [70, 70 - 100, 70 - 100, 100]
+  );
+
+  const triangleX = useTransform(
+    scrollY,
+    [0, viewportHeight],
+    [-800, -800 + 100]
+  );
+
+  const triangleScale = useTransform(
+    scrollY,
+    [
+      0,
+      viewportHeight,
+      viewportHeight + viewportHeight / 4,
+      viewportHeight * 2,
+      viewportHeight * 3,
+    ],
+    [1, 0.5, 0.24, 0.85, 1.3]
+  );
+
+  const triangleFilter = useTransform(
+    scrollY,
+    [
+      0,
+      viewportHeight,
+      viewportHeight + viewportHeight / 4,
+      viewportHeight * 2,
+    ],
+    ["blur(10px)", "blur(5px)", "blur(20px)", "blur(10px)"]
+  );
+
+  const triangleOpacity = useTransform(
+    scrollY,
+    [viewportHeight * 3, viewportHeight * 3 + viewportHeight / 4],
+    [1, 0]
+  );
+
+  const productEngineeringOpacity = useTransform(
+    scrollY,
+    [viewportHeight / 2, viewportHeight, viewportHeight + 1],
+    [0, 1, 1]
+  );
+
+  return (
+    <>
+      <motion.div
+        className="fixed"
+        style={{
+          y: triangleY,
+          scale: triangleScale,
+          filter: triangleFilter,
+          opacity: triangleOpacity,
+          top: 0,
+          x: triangleX,
+        }}
+      >
+        <Image
+          src="/Triangle3.png"
+          alt="glass pyramid"
+          width={500}
+          height={500}
+        />
+      </motion.div>
+
+      <motion.div
+        className="fixed"
+        style={{
+          y,
+          x,
+          scale,
+          filter: ballBlur,
+          opacity: ballOpacity,
+          top: 0,
+        }}
+      >
+        <Image
+          src="/shapes/MainBall.svg"
+          alt="glass bubble"
+          width={300}
+          height={300}
+        />
+      </motion.div>
+
+      <div className="z-20 flex flex-col items-center">
+        <motion.div style={{ y: yTransformHeader, opacity: textOpacity }}>
+          <div className="flex h-[56px] items-center justify-center gap-2.5 py-4">
+            <Image
+              src="/shapes/magic.webp"
+              alt="magic wand"
+              width={16}
+              height={16}
+            />
+            <p className="font-inter text-text-hero font-medium">
+              Introducing AI Automation
+            </p>
+          </div>
+          <h1 className="text-4xl leading-snug font-bold md:text-6xl">
+            from{" "}
+            <span className="bg-background-secondary bg-clip-text text-transparent">
+              CONCEPT
+            </span>
+            <br />
+            to{" "}
+            <span className="bg-background-primary bg-clip-text text-transparent">
+              REALITY
+            </span>
+          </h1>
+        </motion.div>
+
+        <motion.div style={{ y: yTransformSubheading, opacity: textOpacity }}>
+          <p className="text-text-accent mt-4 text-lg">
+            We Engineer your Software Success & Digital Transformation.
+          </p>
+        </motion.div>
+
+        <motion.div style={{ y: yTransformParagraph, opacity: textOpacity }}>
+          <p className="mt-6 max-w-3xl text-gray-300">
+            At Chromexy, we translate your ideas into market-ready solutions
+            quickly and precisely. Leveraging the power of technology and
+            prioritizing user needs, we deliver products that are both
+            cutting-edge and user-centric.
+          </p>
+        </motion.div>
+
+        <motion.div style={{ y: yTransformStats, opacity: textOpacity }}>
+          <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4">
+            <Stat value="200%" label="Revenue Growth" />
+            <Stat value="4X" label="Speed to Market" />
+            <Stat value="73%" label="New Orders" />
+            <Stat value="10K+" label="Active Users" />
+          </div>
+        </motion.div>
+
+        <motion.div style={{ opacity: productEngineeringOpacity }}></motion.div>
+      </div>
+    </>
+  );
+};
+
+const Stat = ({ value, label }: { value: string; label: string }) => {
+  return (
+    <div className="flex flex-col items-center">
+      <p className="from-background-primary to-background-tertiary bg-gradient-to-r bg-clip-text text-[32px] font-bold text-transparent">
+        {value}
+      </p>
+      <span className="text-[14px] text-gray-300">{label}</span>
+    </div>
+  );
+};

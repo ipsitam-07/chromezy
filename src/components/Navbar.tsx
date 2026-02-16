@@ -42,7 +42,7 @@ const Navbar: React.FunctionComponent = () => {
             </div>
           </div>
 
-          <ul className="absolute left-1/2 flex w-130 -translate-x-1/2 transform items-center justify-center gap-8 border-b border-white/10 pb-3">
+          <ul className="absolute left-1/2 flex w-130 -translate-x-1/2 transform items-center justify-center gap-8 border-b border-white/10 pb-2">
             {navItems.map((eachItem) => {
               const active = eachItem.id === "home";
 
@@ -57,7 +57,7 @@ const Navbar: React.FunctionComponent = () => {
                     {eachItem.label}
                   </Link>
                   {active && (
-                    <span className="from-background-primary to-background-secondary absolute -bottom-[13.5px] left-0 h-0.5 w-full bg-linear-to-r" />
+                    <span className="from-background-primary to-background-secondary absolute -bottom-[9.5px] left-0 h-0.5 w-full bg-linear-to-r" />
                   )}
                 </li>
               );
