@@ -39,46 +39,44 @@ const TestimonialCards: React.FC<TestimonialCardsProps> = ({
           className="opacity-100"
         />
       </div>
-      <p
-        className={`mb-6 text-sm leading-relaxed text-white/80 ${inter.variable} font-inter min-h-30`}
-      >
-        {feedback}
-      </p>
-      <div className="space-y-3">
-        <div>
-          <h4 className="text-sm font-semibold tracking-wide text-white">
-            {name}
-          </h4>
-          <p className="mt-1 text-xs text-white/60">
-            {designation}, {company}
+      <div>
+        <div className="mt-2.5 flex h-[282px] flex-col justify-between pb-6">
+          <p
+            className={`mb-6 leading-relaxed text-white/80 ${inter.variable} font-inter min-h-[192px] font-medium`}
+          >
+            {feedback}
           </p>
-        </div>
-        <div className="border-t border-white/10" />
-
-        <div className="grid grid-cols-2 gap-4 text-xs">
-          <div>
-            <p className="mb-1 text-white/40">Star Rating</p>
-            <div className="flex items-center gap-1">
-              <span className="text-yellow-400">★</span>
-              <span className="font-medium text-white/90">{starRating}</span>
+          <div className="h-[42px] w-full space-y-1 pb-6 text-end">
+            <div>
+              <h4 className="text-sm font-semibold tracking-wide text-white">
+                {name}
+              </h4>
+              <p className="text-xs text-[#ffffff99]">
+                {designation}, {company}
+              </p>
             </div>
           </div>
-          <div>
-            <p className="mb-1 text-white/40">Project</p>
-            <p className="text-white/90">{project}</p>
-          </div>
-          <div>
-            <p className="mb-1 text-white/40">Country</p>
-            <p className="text-white/90">{country}</p>
-          </div>
-          <div className="flex items-end justify-end">
-            <div className="relative h-10 w-20">
-              <Image
-                src={brandLogo}
-                alt={`${company} logo`}
-                fill
-                className="object-contain opacity-60"
-              />
+          <div className="border-t border-white/10" />
+
+          <div className="grid grid-cols-2 gap-4 text-xs">
+            <div className="mt-6 flex h-[54px] items-center justify-between">
+              <div className="text-[10px] font-normal text-[#ffffff99]">
+                <p className="leading-[18px]">Star Rating -{starRating}</p>
+
+                <p className="leading-[18px]">Project -{project}</p>
+
+                <p className="leading-[18px]">Country -{country}</p>
+              </div>
+            </div>
+            <div className="flex items-end justify-end">
+              <div className="relative h-10 w-20">
+                <Image
+                  src={brandLogo}
+                  alt={`${company} logo`}
+                  fill
+                  className="object-contain opacity-60"
+                />
+              </div>
             </div>
           </div>
         </div>
