@@ -28,7 +28,7 @@ const ProductServiceCard: React.FC<ProductServiceCardProps> = ({
         minHeight: "436px",
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-white/0 to-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="absolute inset-0 bg-linear-to-b from-white/0 to-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
       <div className="relative flex h-full flex-col p-5">
         <div className="mb-4 flex items-center justify-start">
@@ -36,7 +36,7 @@ const ProductServiceCard: React.FC<ProductServiceCardProps> = ({
             Our Services
           </span>
         </div>
-        <div className="absolute top-6 right-4 h-[177px] w-[150px] opacity-90">
+        <div className="absolute top-6 right-4 h-44.25 w-37.5 opacity-90">
           <Image
             src={svgSrc}
             alt={`${heading} service illustration`}

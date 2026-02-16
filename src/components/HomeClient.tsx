@@ -1,9 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import ProductEngineering from "./ProductEngineering";
 
 export const HomeClient = () => {
   const { scrollY } = useScroll();
@@ -198,7 +197,7 @@ export const HomeClient = () => {
 
       <div className="z-20 flex flex-col items-center">
         <motion.div style={{ y: yTransformHeader, opacity: textOpacity }}>
-          <div className="flex h-[56px] items-center justify-center gap-2.5 py-4">
+          <div className="flex h-14 items-center justify-center gap-2.5 py-4">
             <Image
               src="/shapes/magic.webp"
               alt="magic wand"
@@ -255,7 +254,7 @@ export const HomeClient = () => {
 const Stat = ({ value, label }: { value: string; label: string }) => {
   return (
     <div className="flex flex-col items-center">
-      <p className="from-background-primary to-background-tertiary bg-gradient-to-r bg-clip-text text-[32px] font-bold text-transparent">
+      <p className="from-background-primary to-background-tertiary bg-linear-to-r bg-clip-text text-[32px] font-bold text-transparent">
         {value}
       </p>
       <span className="text-[14px] text-gray-300">{label}</span>
