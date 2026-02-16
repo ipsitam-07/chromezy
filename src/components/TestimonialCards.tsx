@@ -1,22 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { Inter } from "next/font/google";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-interface TestimonialCardsProps {
-  feedback: string;
-  name: string;
-  designation: string;
-  company: string;
-  starRating: string;
-  project: string;
-  country: string;
-  brandLogo: string;
-}
+import { TestimonialCardsProps } from "@/utils/interfaces";
+import { TESTIMONIAL_LABELS } from "@/utils/constants";
 
 const TestimonialCards: React.FC<TestimonialCardsProps> = ({
   feedback,
@@ -29,7 +14,7 @@ const TestimonialCards: React.FC<TestimonialCardsProps> = ({
   brandLogo,
 }) => {
   return (
-    <div className="h-112.5 w-[clamp(310px,47.15vw,400px)] rounded-[20px] bg-[#bdd5f40d] p-6 backdrop-blur-2xl transition-all duration-200 hover:bg-[#bdd5f433]">
+    <div className="h-112.5 w-[clamp(310px,47.15vw,400px)] rounded-[20px] bg-[#bdd5f40d] p-6 backdrop-blur-2xl transition-all duration-200 hover:bg-[#BDD5F4]/20">
       <div className="mb-4">
         <Image
           src="/quote.svg"
@@ -39,44 +24,54 @@ const TestimonialCards: React.FC<TestimonialCardsProps> = ({
           className="opacity-100"
         />
       </div>
-      <div>
-        <div className="mt-2.5 flex h-[282px] flex-col justify-between pb-6">
-          <p
-            className={`mb-6 leading-relaxed text-white/80 ${inter.variable} font-inter min-h-[192px] font-medium`}
-          >
-            {feedback}
-          </p>
-          <div className="h-[42px] w-full space-y-1 pb-6 text-end">
-            <div>
-              <h4 className="text-sm font-semibold tracking-wide text-white">
+
+      <div className="mt-2.5 flex h-[282px] flex-col justify-between pb-6">
+        <p
+          className={`font-inter mb-6 min-h-[192px] text-left leading-relaxed font-medium text-white/80`}
+        >
+          {feedback}
+        </p>
+
+        <div className="w-full pb-6">
+          <div className="flex items-end justify-between">
+            <div className="mt-auto flex w-full flex-col items-end pb-4 text-right">
+              <h4 className="text-sm font-bold tracking-wide text-white uppercase">
                 {name}
               </h4>
               <p className="text-xs text-[#ffffff99]">
                 {designation}, {company}
               </p>
             </div>
+
+            <div className="border-t border-white/10" />
           </div>
-          <div className="border-t border-white/10" />
+        </div>
 
-          <div className="grid grid-cols-2 gap-4 text-xs">
-            <div className="mt-6 flex h-[54px] items-center justify-between">
-              <div className="text-[10px] font-normal text-[#ffffff99]">
-                <p className="leading-[18px]">Star Rating -{starRating}</p>
+        <div className="border-t border-white/10" />
 
-                <p className="leading-[18px]">Project -{project}</p>
-
-                <p className="leading-[18px]">Country -{country}</p>
-              </div>
+        <div className="grid grid-cols-2 items-center gap-4 text-xs">
+          <div className="flex flex-col justify-center py-4 text-left">
+            <div className="text-[10px] font-normal whitespace-nowrap text-[#ffffff99]">
+              <p className="leading-[20px]">
+                {TESTIMONIAL_LABELS.STAR_RATING} – {starRating}
+              </p>
+              <p className="leading-[20px]">
+                {TESTIMONIAL_LABELS.PROJECT} – {project}
+              </p>
+              <p className="leading-[20px]">
+                {TESTIMONIAL_LABELS.COUNTRY} – {country}
+              </p>
             </div>
-            <div className="flex items-end justify-end">
-              <div className="relative h-10 w-20">
-                <Image
-                  src={brandLogo}
-                  alt={`${company} logo`}
-                  fill
-                  className="object-contain opacity-60"
-                />
-              </div>
+          </div>
+
+          <div className="flex items-center justify-end">
+            <div className="relative h-10 w-24">
+              <Image
+                src={brandLogo}
+                alt={`${company} logo`}
+                fill
+                className="object-contain object-right opacity-80"
+              />
             </div>
           </div>
         </div>

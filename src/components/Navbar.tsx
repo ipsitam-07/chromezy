@@ -1,15 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-
-const navItems = [
-  { id: "home", label: "Home" },
-  { id: "exploreai", label: "Explore AI" },
-  { id: "services", label: "Services" },
-  { id: "ecommerce", label: "E-commerce" },
-  { id: "products", label: "Products" },
-  { id: "blogs", label: "Blogs" },
-];
+import { NAVBAR_LABELS, navItems } from "@/utils/constants";
 
 const Navbar: React.FunctionComponent = () => {
   return (
@@ -69,13 +61,13 @@ const Navbar: React.FunctionComponent = () => {
               href="#about"
               className="px-5 py-2 text-sm text-white/80 transition-colors hover:text-white"
             >
-              About Us
+              {NAVBAR_LABELS.ABOUT_US}
             </Link>
             <Link
               href="#contact"
               className="from-background-primary to-background-primary/90 hover:shadow-background-primary/30 rounded-full bg-linear-to-r px-6 py-2.5 text-sm font-medium text-white transition-all hover:shadow-lg"
             >
-              Contact Us
+              {NAVBAR_LABELS.CONTACT_US}
             </Link>
           </div>
         </div>

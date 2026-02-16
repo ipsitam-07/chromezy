@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { HOME_STRINGS, STATS_DATA } from "@/utils/constants";
 
 export const HomeClient = () => {
   const { scrollY } = useScroll();
@@ -205,43 +206,39 @@ export const HomeClient = () => {
               height={16}
             />
             <p className="font-inter text-text-hero font-medium">
-              Introducing AI Automation
+              {HOME_STRINGS.HERO_BADGE}
             </p>
           </div>
           <h1 className="text-4xl leading-snug font-bold md:text-6xl">
-            from{" "}
+            {HOME_STRINGS.TITLE_PART_1}{" "}
             <span className="bg-background-secondary bg-clip-text text-transparent">
-              CONCEPT
+              {HOME_STRINGS.CONCEPT}
             </span>
             <br />
-            to{" "}
+            {HOME_STRINGS.TITLE_PART_2}{" "}
             <span className="bg-background-primary bg-clip-text text-transparent">
-              REALITY
+              {HOME_STRINGS.REALITY}
             </span>
           </h1>
         </motion.div>
 
         <motion.div style={{ y: yTransformSubheading, opacity: textOpacity }}>
           <p className="text-text-accent mt-4 text-lg">
-            We Engineer your Software Success & Digital Transformation.
+            {HOME_STRINGS.SUBHEADING}
           </p>
         </motion.div>
 
         <motion.div style={{ y: yTransformParagraph, opacity: textOpacity }}>
           <p className="mt-6 max-w-3xl text-gray-300">
-            At Chromexy, we translate your ideas into market-ready solutions
-            quickly and precisely. Leveraging the power of technology and
-            prioritizing user needs, we deliver products that are both
-            cutting-edge and user-centric.
+            {HOME_STRINGS.DESCRIPTION}
           </p>
         </motion.div>
 
         <motion.div style={{ y: yTransformStats, opacity: textOpacity }}>
           <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4">
-            <Stat value="200%" label="Revenue Growth" />
-            <Stat value="4X" label="Speed to Market" />
-            <Stat value="73%" label="New Orders" />
-            <Stat value="10K+" label="Active Users" />
+            {STATS_DATA.map((stat, i) => (
+              <Stat key={i} value={stat.value} label={stat.label} />
+            ))}
           </div>
         </motion.div>
 
