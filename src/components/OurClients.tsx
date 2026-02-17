@@ -79,7 +79,7 @@ function HappyClients() {
             {CLIENT_SECTION_STRINGS.TITLE}
           </h2>
 
-          <p className="max-w-[600px] text-[clamp(14px,3vw,18px)] font-normal tracking-wide text-[#ffffffcc]">
+          <p className="max-w-[600px] text-[clamp(14px,3vw,16px)] font-normal tracking-wide text-[#ffffffcc]">
             {CLIENT_SECTION_STRINGS.DESCRIPTION}
           </p>
         </div>

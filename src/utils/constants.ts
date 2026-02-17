@@ -198,3 +198,10 @@ export const SUCCESS_STRING = {
   DESCRIPTION:
     "Dummy ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
 };
+
+//Innovative section
+export const INNOVATIVE_STRINGS = {
+  HEADING: "INNOVATIVE TECHNOLOGIES KEEPING US AHEAD",
+  DESCRIPTION:
+    "Discover the impact of bespoke digital solutions tailored precisely to your business's distinct requirements.",
+} as const;
