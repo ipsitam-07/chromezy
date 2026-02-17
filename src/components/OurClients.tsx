@@ -1,11 +1,17 @@
 "use client";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  useScroll,
+  useMotionValueEvent,
+  useTransform,
+  motion,
+} from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import TestimonialCard from "./TestimonialCards";
 import { TESTIMONIALS, CLIENT_SECTION_STRINGS } from "@/utils/constants";
 
 function HappyClients() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
@@ -17,13 +23,46 @@ function HappyClients() {
     offset: ["start end", "end start"],
   });
 
-  const xTranslate = useTransform(scrollYProgress, [0.1, 1], [0, -1200]);
-  const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
+  const entryX = useTransform(scrollYProgress, [0.1, 0.4], [200, 0]);
+  const opacity = useTransform(scrollYProgress, [0.1, 0.3], [0, 1]);
 
-  // Server-side static hydration, animation will be client side
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const maxScroll = container.scrollWidth - container.clientWidth;
+
+      const startScroll = 0.6;
+      const endScroll = 1.0;
+
+      let progress = 0;
+      if (latest > startScroll) {
+        progress = (latest - startScroll) / (endScroll - startScroll);
+      }
+      if (progress > 1) progress = 1;
+
+      if (maxScroll > 0) {
+        container.scrollLeft = progress * maxScroll;
+      }
+    }
+  });
+  const scroll = (direction: "left" | "right") => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, clientWidth } = scrollContainerRef.current;
+      const scrollTo =
+        direction === "left"
+          ? scrollLeft - clientWidth / 2
+          : scrollLeft + clientWidth / 2;
+
+      scrollContainerRef.current.scrollTo({
+        left: scrollTo,
+        behavior: "smooth",
+      });
+    }
+  };
+
   if (!hasMounted) {
     return (
-      <section className="relative z-30 mt-32 w-full overflow-hidden px-6 opacity-0 md:px-10 lg:px-20">
+      <section className="relative z-30 mt-32 w-full px-6 opacity-0 md:px-10 lg:px-20">
         <div ref={sectionRef} />
       </section>
     );
@@ -32,7 +71,7 @@ function HappyClients() {
   return (
     <section
       ref={sectionRef}
-      className="relative z-30 mt-32 w-full overflow-hidden px-6 md:px-10 lg:px-20"
+      className="relative z-30 mt-32 w-full px-6 md:px-10 lg:px-20"
     >
       <div className="mb-12 flex flex-col justify-between md:flex-row md:items-end">
         <div className="flex flex-col gap-2">
@@ -45,9 +84,10 @@ function HappyClients() {
           </p>
         </div>
 
-        <div className="mt-6 flex items-center gap-2 max-sm:hidden md:mt-0">
+        <div className="relative z-50 mt-6 flex items-center gap-2 max-sm:hidden md:mt-0">
           <button
-            className="nextBtn m-2 flex h-10 w-10 items-center justify-center rounded-[50%] bg-[#40424C] transition-colors hover:bg-[#50525C]"
+            onClick={() => scroll("left")}
+            className="nextBtn m-2 flex h-10 w-10 cursor-pointer items-center justify-center rounded-[50%] bg-[#40424C] transition-colors hover:bg-[#50525C] active:scale-95"
             aria-label="Previous testimonial"
           >
             <svg
@@ -70,7 +110,8 @@ function HappyClients() {
             </svg>
           </button>
           <button
-            className="prevBtn m-2 flex h-10 w-10 items-center justify-center rounded-[50%] bg-[#40424C] transition-colors hover:bg-[#50525C]"
+            onClick={() => scroll("right")}
+            className="prevBtn m-2 flex h-10 w-10 cursor-pointer items-center justify-center rounded-[50%] bg-[#40424C] transition-colors hover:bg-[#50525C] active:scale-95"
             aria-label="Next testimonial"
           >
             <svg
@@ -95,26 +136,32 @@ function HappyClients() {
         </div>
       </div>
 
-      <div className="relative z-10">
-        <motion.div
-          style={{ x: xTranslate, opacity }}
-          className="flex gap-6 pb-10"
+      <div className="relative z-10 w-full">
+        <div
+          ref={scrollContainerRef}
+          className="no-scrollbar flex gap-6 overflow-x-auto pb-10"
+          style={{ scrollBehavior: "auto" }}
         >
-          {TESTIMONIALS.map((t) => (
-            <div key={t.key} className="flex-shrink-0">
-              <TestimonialCard
-                feedback={t.feedback}
-                name={t.name}
-                designation={t.designation}
-                company={t.company}
-                starRating={t.starRating}
-                project={t.project}
-                country={t.country}
-                brandLogo={t.brandLogo}
-              />
-            </div>
-          ))}
-        </motion.div>
+          <motion.div
+            style={{ x: entryX, opacity }}
+            className="flex w-max gap-6"
+          >
+            {TESTIMONIALS.map((t) => (
+              <div key={t.key} className="flex-shrink-0">
+                <TestimonialCard
+                  feedback={t.feedback}
+                  name={t.name}
+                  designation={t.designation}
+                  company={t.company}
+                  starRating={t.starRating}
+                  project={t.project}
+                  country={t.country}
+                  brandLogo={t.brandLogo}
+                />
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );
