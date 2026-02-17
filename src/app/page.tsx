@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import { HomeClient } from "@/components/HomeClient";
 import ProductEngineering from "@/components/ProductEngineering";
 import OurClients from "@/components/OurClients";

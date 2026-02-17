@@ -1,9 +1,39 @@
+"use client";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
 import TestimonialCard from "./TestimonialCards";
 import { TESTIMONIALS, CLIENT_SECTION_STRINGS } from "@/utils/constants";
 
 function HappyClients() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const xTranslate = useTransform(scrollYProgress, [0.1, 1], [0, -1200]);
+  const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
+
+  // Server-side static hydration, animation will be client side
+  if (!hasMounted) {
+    return (
+      <section className="relative z-30 mt-32 w-full overflow-hidden px-6 opacity-0 md:px-10 lg:px-20">
+        <div ref={sectionRef} />
+      </section>
+    );
+  }
+
   return (
-    <div className="relative z-30 mt-32 w-full px-6 md:px-10 lg:px-20">
+    <section
+      ref={sectionRef}
+      className="relative z-30 mt-32 w-full overflow-hidden px-6 md:px-10 lg:px-20"
+    >
       <div className="mb-12 flex flex-col justify-between md:flex-row md:items-end">
         <div className="flex flex-col gap-2">
           <h2 className="block w-full text-left text-[clamp(32px,4vw,40px)] font-semibold tracking-tighter text-white uppercase">
@@ -11,7 +41,7 @@ function HappyClients() {
           </h2>
 
           <p className="max-w-[600px] text-[clamp(14px,3vw,18px)] font-normal tracking-wide text-[#ffffffcc]">
-            {CLIENT_SECTION_STRINGS.DESCRIPTION}{" "}
+            {CLIENT_SECTION_STRINGS.DESCRIPTION}
           </p>
         </div>
 
@@ -64,10 +94,14 @@ function HappyClients() {
           </button>
         </div>
       </div>
+
       <div className="relative z-10">
-        <div className="no-scrollbar flex snap-x snap-mandatory gap-6 overflow-x-auto">
+        <motion.div
+          style={{ x: xTranslate, opacity }}
+          className="flex gap-6 pb-10"
+        >
           {TESTIMONIALS.map((t) => (
-            <div key={t.key} className="flex-shrink-0 snap-start">
+            <div key={t.key} className="flex-shrink-0">
               <TestimonialCard
                 feedback={t.feedback}
                 name={t.name}
@@ -80,9 +114,9 @@ function HappyClients() {
               />
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 }
 
