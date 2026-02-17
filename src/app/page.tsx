@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { HomeClient } from "@/components/HomeClient";
-import ProductEngineering from "@/components/ProductEngineering";
-import OurClients from "@/components/OurClients";
+import ProductEngineering from "@/components/product-engg/ProductEngineering";
+import OurClients from "@/components/our-clients/OurClients";
 import SuccessStories from "@/components/SuccessStories";
-import InnvovativeTechWrap from "@/components/InnovativeTechWrap";
+import InnvovativeTechWrap from "@/components/innovative-section/InnovativeTechWrap";
 
 const Home = () => {
   return (
