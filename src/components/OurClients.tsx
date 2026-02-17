@@ -31,7 +31,7 @@ function HappyClients() {
       const container = scrollContainerRef.current;
       const maxScroll = container.scrollWidth - container.clientWidth;
 
-      const startScroll = 0.6;
+      const startScroll = 0.75;
       const endScroll = 1.0;
 
       let progress = 0;
