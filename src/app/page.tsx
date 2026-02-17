@@ -2,11 +2,12 @@ import Image from "next/image";
 import { HomeClient } from "@/components/HomeClient";
 import ProductEngineering from "@/components/ProductEngineering";
 import OurClients from "@/components/OurClients";
+import SuccessStories from "@/components/SuccessStories";
 
 const Home = () => {
   return (
     <>
-      <section className="bg-background relative z-10 flex min-h-screen w-full flex-col items-center justify-center overflow-hidden px-6 pt-36 text-center text-white">
+      <section className="relative z-10 flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#151A2C] pt-36 text-center text-white">
         <div className="pointer-events-none absolute top-0 left-1/2 h-50 w-150 -translate-x-1/2 bg-[radial-gradient(circle,rgba(9,93,255,1),rgba(191,9,255,0.3))] blur-3xl" />
         <div className="pointer-events-none absolute top-0 left-0 h-50 w-75 -translate-x-1/2 bg-[radial-gradient(circle,rgba(9,93,255,0.5),rgba(191,9,255,0))] opacity-40 blur-2xl" />
         <div className="pointer-events-none absolute top-[90vh] left-0 h-75 w-150 translate-x-[-50%] bg-[radial-gradient(circle,rgba(9,93,255,0.5),rgba(191,9,255,0))] blur-3xl" />
@@ -36,6 +37,7 @@ const Home = () => {
 
         <ProductEngineering />
         <OurClients />
+        <SuccessStories />
       </section>
     </>
   );

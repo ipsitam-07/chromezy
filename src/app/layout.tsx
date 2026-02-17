@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${sora.variable} ${inter.variable}`}>
-      <body className="font-inter antialiased">
+      <body className="font-sora antialiased">
         <Navbar />
         {children}
       </body>

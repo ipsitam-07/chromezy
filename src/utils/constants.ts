@@ -1,3 +1,4 @@
+//Product engineering section
 export const SERVICE_CARD_CONTENT = [
   {
     key: "mvp",
@@ -38,7 +39,7 @@ export const LAYOUT_CONSTANTS = {
   SECTION_DESCRIPTION:
     "Discover the impact of bespoke digital solutions tailored precisely to your business's distinct requirements. Our experienced team of professionals ensures you receive outstanding results that consistently exceed your expectations.",
 };
-
+//Testimonials cards
 export const TESTIMONIALS = [
   {
     key: "jeet",
@@ -90,6 +91,7 @@ export const TESTIMONIALS = [
   },
 ];
 
+//Our clients section
 export const CLIENT_SECTION_STRINGS = {
   TITLE: "Our Happy Clients",
   DESCRIPTION: "Dummy ipsum dolor sit amet, consectetur adipiscing elit",
@@ -117,6 +119,7 @@ export const TESTIMONIAL_LABELS = {
   COUNTRY: "Country",
 } as const;
 
+//Navbar section
 export const navItems = [
   { id: "home", label: "Home" },
   { id: "exploreai", label: "Explore AI" },
@@ -131,6 +134,7 @@ export const NAVBAR_LABELS = {
   CONTACT_US: "Contant Us",
 };
 
+//Hero section
 export const HOME_STRINGS = {
   HERO_BADGE: "Introducing AI Automation",
   TITLE_PART_1: "from ",
@@ -148,3 +152,49 @@ export const STATS_DATA = [
   { value: "73%", label: "New Orders" },
   { value: "10K+", label: "Active Users" },
 ];
+
+//Success Stories section
+export const STORIES = [
+  {
+    id: 1,
+    image: "/cards/fin.png",
+    title: "FinConnect",
+    subtitle: "Customer Relationship Management (CRM)",
+    label: "Success Stories",
+  },
+  {
+    id: 2,
+    image: "/cards/health.png",
+    title: "HealthSync",
+    subtitle: "Health Tracking App for Patients and Doctors",
+    label: "Success Stories",
+  },
+  {
+    id: 3,
+    image: "/cards/commerce.png",
+    title: "Commerce360",
+    subtitle: "Online Store, Multivendor Marketplace & E-commerce Apps",
+    label: "Success Stories",
+  },
+  {
+    id: 4,
+    image: "/cards/ai.png",
+    title: "PrintwithAI",
+    subtitle:
+      "Web-to-Print Software / Online Design Tool / Product Designer Tool",
+    label: "Success Stories",
+  },
+  {
+    id: 5,
+    image: "/cards/pm.png",
+    title: "PM Insights",
+    subtitle: "Project Management Tool (SaaS & Hosted)",
+    label: "Success Stories",
+  },
+] as const;
+
+export const SUCCESS_STRING = {
+  HEADING: "Success Stories",
+  DESCRIPTION:
+    "Dummy ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+};

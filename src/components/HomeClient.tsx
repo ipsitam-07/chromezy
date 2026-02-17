@@ -159,7 +159,7 @@ export const HomeClient = () => {
   return (
     <>
       <motion.div
-        className="fixed"
+        className="fixed z-0 mix-blend-screen"
         style={{
           y: triangleY,
           scale: triangleScale,
@@ -170,10 +170,10 @@ export const HomeClient = () => {
         }}
       >
         <Image
-          src="/Triangle3.png"
+          src="/shapes/cone.png"
           alt="glass pyramid"
-          width={500}
-          height={500}
+          width={600}
+          height={600}
         />
       </motion.div>
 
