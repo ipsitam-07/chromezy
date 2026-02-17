@@ -3,7 +3,7 @@ import { HomeClient } from "@/components/HomeClient";
 import ProductEngineering from "@/components/product-engg/ProductEngineering";
 import OurClients from "@/components/our-clients/OurClients";
 import SuccessStories from "@/components/SuccessStories";
-import InnvovativeTechWrap from "@/components/innovative-section/InnovativeTechWrap";
+import InnovateTechMain from "@/components/innovative-section/InnovativeTechMain";
 
 const Home = () => {
   return (
@@ -39,7 +39,7 @@ const Home = () => {
         <ProductEngineering />
         <OurClients />
         <SuccessStories />
-        <InnvovativeTechWrap />
+        <InnovateTechMain />
       </section>
     </>
   );

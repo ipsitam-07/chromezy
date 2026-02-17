@@ -205,3 +205,53 @@ export const INNOVATIVE_STRINGS = {
   DESCRIPTION:
     "Discover the impact of bespoke digital solutions tailored precisely to your business's distinct requirements.",
 } as const;
+
+export const CATEGORIES = [
+  {
+    id: "01",
+    title: "Web App Development",
+    items: [
+      "React",
+      "Node",
+      "Angular",
+      "Vue",
+      "ExpressJS",
+      "AdobeXD",
+      "Figma",
+      "Whimsical",
+    ],
+  },
+  {
+    id: "02",
+    title: "Mobile App Development",
+    items: ["Flutter", "Kotlin", "Swift", "React Native", "AdobeXD", "Figma"],
+  },
+  {
+    id: "03",
+    title: "E-commerce",
+    items: ["Shopify", "WooCommerce", "Prestashop"],
+  },
+  {
+    id: "04",
+    title: "Analytics",
+    items: [
+      "Python",
+      "PowerBI",
+      "Tableau",
+      "Amazon QuickSight",
+      "Apache Spark",
+    ],
+  },
+  {
+    id: "05",
+    title: "Data & Cloud",
+    items: [
+      "Azure",
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "Google Cloud",
+      "Ola Krutrim",
+    ],
+  },
+];
