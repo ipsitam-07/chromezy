@@ -5,6 +5,7 @@ import OurClients from "@/components/our-clients/OurClients";
 import SuccessStories from "@/components/SuccessStories";
 import InnovateTechMain from "@/components/innovative-section/InnovativeTechMain";
 import FeatureMain from "@/components/feature-section/FeatureMain";
+import Footer from "@/components/ui/Footer";
 
 const Home = () => {
   return (
@@ -43,6 +44,7 @@ const Home = () => {
         <InnovateTechMain />
         <FeatureMain />
       </section>
+      <Footer />
     </>
   );
 };

@@ -284,3 +284,35 @@ export const INSIGHTS = [
     text: "Boost your e-commerce sales with AI-powered product recommendations. Learn how smart algorithms can enhance customer experience and drive conversions.",
   },
 ] as const;
+
+//Footer section
+export const FOOTER_STRINGS = {
+  COPYRIGHT_STRINGS: {
+    YEAR: "Copyright © 2026",
+    RIGHTS: "Chromezy, All Rights Reserved",
+    OWNER: "Designed by Ipsita Mohanty",
+  },
+  CONNECT: "Connect with us:",
+  NAVIGATION_COLUMNS: {
+    HOME: "Home",
+    ABOUT_US: "About Us",
+    CARRER: "Career",
+    CASE_STUDY: "Case Study",
+    TEAM: "Join the Team",
+    AI: "AI",
+    MVP: "MVP",
+    SAAS: "Saas",
+    ECOM: "E-commerce",
+    WORK_WITH_US: "Work with us",
+  },
+  CONTACT_INFO: {
+    PHONE: "+1 315 308 0901",
+    EMAIL: "sales@chromezy.com",
+  },
+  TERMS: {
+    TERMS: "Terms",
+    PRIVACY: "Privacy",
+  },
+  DESCRIPTION:
+    "Not just about software & Product development; we're your tech partners, crafting modern digital solutions for next-gen excellence!",
+};
