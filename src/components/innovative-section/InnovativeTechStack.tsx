@@ -1,11 +1,20 @@
+"use client";
 import InnovativeTechIcon from "./InnovativeTechIcon";
 import { CATEGORIES } from "@/utils/constants";
+import { motion } from "framer-motion";
 
 function InnovativeTechStack() {
   return (
     <div className="m-h-[117px] w-full max-w-[850px] space-y-10 pt-20 text-white">
-      {CATEGORIES.map((cat) => (
-        <div key={cat.id} className="flex gap-[40px] md:gap-10">
+      {CATEGORIES.map((cat, index) => (
+        <motion.div
+          key={cat.id}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.3, delay: index * 0.1, ease: "easeOut" }}
+          className="flex gap-[40px] md:gap-10"
+        >
           <span className="shrink-0 pt-1 text-5xl leading-none font-bold text-white/10 select-none">
             {cat.id}
           </span>
@@ -29,7 +38,7 @@ function InnovativeTechStack() {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
