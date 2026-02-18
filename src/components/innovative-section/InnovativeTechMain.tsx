@@ -68,14 +68,11 @@ function InnovateTechMain() {
       >
         <div className="pointer-events-none absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle,rgba(67,128,255,0.1),rgba(157,132,242,0.05))] blur-3xl" />
 
-        {/* Layout Container */}
         <div className="relative z-10 mx-auto flex max-w-[1400px] flex-col items-start justify-between gap-12 lg:flex-row lg:gap-16">
-          {/* LEFT COLUMN: Added Sticky Behavior */}
           <div className="w-full flex-shrink-0 lg:sticky lg:top-24 lg:h-fit lg:w-auto">
             <InnvovativeTechWrap />
           </div>
 
-          {/* RIGHT COLUMN: Scrolls naturally */}
           <div className="w-full lg:flex-1">
             <InnovativeTechStack />
           </div>

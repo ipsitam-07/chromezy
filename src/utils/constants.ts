@@ -255,3 +255,32 @@ export const CATEGORIES = [
     ],
   },
 ];
+
+//Feature section
+export const FEATURE_STRINGS = {
+  HEADING: "Featured Insights",
+  DESCRIPTION:
+    "Were you looking to explore a specific topic? You're in the right spot.",
+};
+
+export const INSIGHTS = [
+  {
+    key: 1,
+    imgSrc: "/featured/game.png",
+    heading: "Successful MVP Launches That Changed the Game.",
+    text: "Discover the secrets behind game-changing MVP launches! From lean startups to industry giants, explore how these innovative launches disrupted markets and paved the way for success.",
+  },
+  {
+    key: 2,
+    imgSrc: "/featured/product.png",
+    heading: "How Our AI Product Development Company is Pioneering Innovation?",
+    text: "Discover how our product development company pioneers innovation. From groundbreaking Services to creative strategies, we're shaping the future.",
+  },
+  {
+    key: 3,
+    imgSrc: "/featured/ai.png",
+    heading:
+      "Optimizing E-commerce Sales with AI-Driven Product Recommendations.",
+    text: "Boost your e-commerce sales with AI-powered product recommendations. Learn how smart algorithms can enhance customer experience and drive conversions.",
+  },
+] as const;

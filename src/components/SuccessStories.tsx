@@ -8,7 +8,7 @@ function SuccessStories() {
 
       <div className="relative z-10 mb-6 grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
         <div className="flex flex-col justify-center gap-2">
-          <h2 className="block w-full text-left text-[clamp(32px,4vw,40px)] font-semibold tracking-tighter text-white uppercase">
+          <h2 className="block w-full pr-40 text-left text-[clamp(32px,4vw,40px)] leading-13 font-semibold tracking-tighter text-white uppercase">
             {SUCCESS_STRING.HEADING}
           </h2>
           <p className="max-w-[600px] text-left text-[clamp(14px,3vw,16px)] font-normal tracking-wide text-[#ffffffcc]">

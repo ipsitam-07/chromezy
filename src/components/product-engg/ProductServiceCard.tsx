@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { ProductServiceCardProps } from "@/utils/interfaces";
+import { ProductServiceCardProps } from "@/components/interfaces/props";
 import { SERVICE_CARD_UI } from "@/utils/constants";
 
 const ProductServiceCard: React.FC<ProductServiceCardProps> = ({

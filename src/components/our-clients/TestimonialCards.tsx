@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { TestimonialCardsProps } from "@/utils/interfaces";
+import { TestimonialCardsProps } from "@/components/interfaces/props";
 import { TESTIMONIAL_LABELS } from "@/utils/constants";
 
 const TestimonialCards: React.FC<TestimonialCardsProps> = ({

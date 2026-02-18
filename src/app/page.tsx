@@ -4,6 +4,7 @@ import ProductEngineering from "@/components/product-engg/ProductEngineering";
 import OurClients from "@/components/our-clients/OurClients";
 import SuccessStories from "@/components/SuccessStories";
 import InnovateTechMain from "@/components/innovative-section/InnovativeTechMain";
+import FeatureMain from "@/components/feature-section/FeatureMain";
 
 const Home = () => {
   return (
@@ -40,6 +41,7 @@ const Home = () => {
         <OurClients />
         <SuccessStories />
         <InnovateTechMain />
+        <FeatureMain />
       </section>
     </>
   );

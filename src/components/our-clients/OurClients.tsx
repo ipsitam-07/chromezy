@@ -9,7 +9,7 @@ import { useRef, useState, useEffect } from "react";
 import TestimonialCard from "./TestimonialCards";
 import { TESTIMONIALS, CLIENT_SECTION_STRINGS } from "@/utils/constants";
 
-function HappyClients() {
+function OurClients() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [hasMounted, setHasMounted] = useState(false);
@@ -167,4 +167,4 @@ function HappyClients() {
   );
 }
 
-export default HappyClients;
+export default OurClients;

@@ -15,3 +15,9 @@ export interface TestimonialCardsProps {
   country: string;
   brandLogo: string;
 }
+
+export interface FeaturedCardProps {
+  imgSrc: string;
+  title: string;
+  description: string;
+}
