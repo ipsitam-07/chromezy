@@ -15,6 +15,7 @@ export const HomeClient = () => {
     }
   }, []);
 
+  //Ball animation
   const x = useTransform(
     scrollY,
     [
@@ -24,7 +25,7 @@ export const HomeClient = () => {
       viewportHeight * 5,
       viewportHeight * 6,
     ],
-    [600, 424, 424, 0, -100]
+    [570, 420, 417, 145, 100]
   );
 
   const y = useTransform(
@@ -40,14 +41,14 @@ export const HomeClient = () => {
       viewportHeight * 6,
     ],
     [
-      60,
-      60 + 121,
-      60 + 121,
-      60 + 121 - 300,
-      60 + 121 - 100,
-      60 + 121 - 100 + 20,
-      60 + 121 - 100 + 20 + 400,
-      50,
+      100,
+      100 + 115,
+      100 + 115,
+      100 + 115 - 300,
+      100 + 115 - 100,
+      100 + 115 - 100 + 20,
+      100 + 115 - 100 + 20 + 400,
+      90,
     ]
   );
 
@@ -60,8 +61,10 @@ export const HomeClient = () => {
       viewportHeight * 3,
       viewportHeight * 4,
       viewportHeight * 5,
+      viewportHeight * 6,
+      viewportHeight * 7,
     ],
-    [1, 2, 1, 1.9, 2.5, 1]
+    [1, 2, 1, 1.9, 2.5, 1.5, 1.3, 1]
   );
 
   const ballOpacity = useTransform(
@@ -81,6 +84,8 @@ export const HomeClient = () => {
     [viewportHeight + viewportHeight / 4, viewportHeight * 2],
     ["blur(0px)", "blur(10px)"]
   );
+
+  //Text
 
   const textOpacity = useTransform(scrollY, [0, viewportHeight * 1.5], [1, 0]);
 

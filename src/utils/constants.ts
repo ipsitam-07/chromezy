@@ -316,3 +316,27 @@ export const FOOTER_STRINGS = {
   DESCRIPTION:
     "Not just about software & Product development; we're your tech partners, crafting modern digital solutions for next-gen excellence!",
 };
+
+//Contact us section
+export const CONTACT_US_STRINGS = {
+  HEADING: "Contact Us",
+  DESCRIPTION:
+    "Talk with us to know how we can make you a part of a thriving digital landscape",
+  PHONE: {
+    LABEL: "Phone",
+    NUMBER: "+1 315 308 0901",
+  },
+  EMAIL: {
+    LABEL: "Email",
+    MAIL: "sales@chromezy.com",
+  },
+  FORM: {
+    HEADER: "Let's Talk!",
+    NAME: "What's your name?",
+    EMAIL: "What's your email address?",
+    PHONE: "What's your phone number?",
+    LOOKING_FOR: "What are you looking for?",
+    HELP_YOU: "How can we help you?",
+    SEND: "Send Request",
+  },
+};

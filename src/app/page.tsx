@@ -6,6 +6,7 @@ import SuccessStories from "@/components/SuccessStories";
 import InnovateTechMain from "@/components/innovative-section/InnovativeTechMain";
 import FeatureMain from "@/components/feature-section/FeatureMain";
 import Footer from "@/components/ui/Footer";
+import ContactScreen from "@/components/Contacts";
 
 const Home = () => {
   return (
@@ -43,6 +44,7 @@ const Home = () => {
         <SuccessStories />
         <InnovateTechMain />
         <FeatureMain />
+        <ContactScreen />
       </section>
       <Footer />
     </>
