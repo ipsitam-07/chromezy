@@ -121,8 +121,8 @@ export const HomeClient = () => {
 
   const triangleX = useTransform(
     scrollY,
-    [0, viewportHeight, viewportHeight * 2],
-    [-800, -800 + 50, -650]
+    [0, viewportHeight, viewportHeight * 2, viewportHeight * 4],
+    [-800, -800 + 50, -650, -850]
   );
 
   const triangleScale = useTransform(
@@ -145,7 +145,7 @@ export const HomeClient = () => {
       viewportHeight + viewportHeight / 4,
       viewportHeight * 2,
     ],
-    ["blur(10px)", "blur(5px)", "blur(20px)", "blur(10px)"]
+    ["blur(10px)", "blur(20px)", "blur(20px)", "blur(10px)"]
   );
 
   const triangleOpacity = useTransform(
