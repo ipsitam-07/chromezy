@@ -26,14 +26,14 @@ function ContactScreen() {
   const envelopeY = useTransform(
     scrollYProgress,
     [0.05, 0.35, 0.33],
-    [-140, -40, 0]
+    [-140, -60, 0]
   );
 
   const envelopeX = useTransform(scrollYProgress, [0.35, 0.37], [60, 60]);
 
   const envelopeScale = useTransform(scrollYProgress, [0.05, 0.24], [1, 0.8]);
 
-  const envelopeOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 1]);
+  const envelopeOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0.8]);
 
   const blur = useTransform(scrollYProgress, [0, 0.05, 0.33], [0, 0, 0.5]);
   const blurFilter = useTransform(blur, (v) => `blur(${v}px)`);
