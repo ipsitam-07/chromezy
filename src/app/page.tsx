@@ -23,6 +23,7 @@ const Home = () => {
           width={800}
           height={800}
           className="absolute top-120 left-190 -translate-x-1/2 -translate-y-1/2 -rotate-4 opacity-70 blur-2xl"
+          priority
         />
         <HomeClient />
         <hr className="mt-20 mb-12.5 w-7xl border-t border-dashed border-white/20" />

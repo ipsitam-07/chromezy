@@ -11,7 +11,7 @@ const ProductServiceCard: React.FC<ProductServiceCardProps> = ({
 }) => {
   return (
     <div
-      className="group relative overflow-hidden rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
+      className="group relative max-h-[436px] max-w-[308px] overflow-hidden rounded-[12px] transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
       style={{
         backgroundColor: bgColor,
         minHeight: SERVICE_CARD_UI.MIN_HEIGHT,
@@ -25,26 +25,26 @@ const ProductServiceCard: React.FC<ProductServiceCardProps> = ({
             {SERVICE_CARD_UI.LABELS.BADGE}
           </span>
         </div>
-        <div className="absolute top-6 right-4 h-44.25 w-37.5 opacity-90">
+        <div className="absolute top-6 right-1 h-44.25 w-37.5 opacity-90">
           <Image
             src={svgSrc}
             alt={`${heading} service illustration`}
             fill
-            className="object-contain"
+            className="h-[149px] w-[153px] object-contain"
           />
         </div>
-        <div className="relative mt-20 flex flex-1 flex-col">
-          <h3 className="mb-4 text-2xl leading-tight font-bold text-white">
+        <div className="relative mt-[56px] flex flex-1 flex-col">
+          <h3 className="mb-4 text-left text-2xl font-bold text-white">
             {heading}
           </h3>
 
           <p
-            className={`font-inter mb-6 flex-1 text-sm leading-relaxed text-white/80`}
+            className={`font-inter flex-1 text-left text-[14px] leading-5 text-white/80`}
           >
             {content}
           </p>
           <button
-            className="group/btn flex h-12 w-full items-center justify-center gap-2 rounded-full bg-black/80 text-xs font-medium text-white backdrop-blur-sm transition-all duration-300 hover:bg-black hover:shadow-lg hover:shadow-black/50"
+            className="group/btn flex h-12 w-full items-center justify-center gap-2 rounded-full bg-black text-xs font-medium text-white backdrop-blur-sm transition-all duration-300 hover:bg-black hover:shadow-lg hover:shadow-black/50"
             aria-label={`Talk to a product expert about ${heading}`}
           >
             <span className="font-inter">{SERVICE_CARD_UI.LABELS.BUTTON}</span>

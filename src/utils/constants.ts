@@ -319,7 +319,7 @@ export const FOOTER_STRINGS = {
 
 //Contact us section
 export const CONTACT_US_STRINGS = {
-  HEADING: "Contact Us",
+  HEADING: "CONTACT US",
   DESCRIPTION:
     "Talk with us to know how we can make you a part of a thriving digital landscape",
   PHONE: {
