@@ -28,14 +28,56 @@ const Home = () => {
         <HomeClient />
         <hr className="mt-20 mb-12.5 w-7xl border-t border-dashed border-white/20" />
 
-        <div className="flex flex-wrap justify-center opacity-80">
-          <Image src="/brands/lg1.png" alt="logo1" width={149.1} height={72} />
-          <Image src="/brands/lg2.png" alt="logo2" width={149.1} height={72} />
-          <Image src="/brands/lg3.png" alt="logo3" width={149.1} height={72} />
-          <Image src="/brands/lg4.png" alt="logo4" width={149.1} height={72} />
-          <Image src="/brands/lg5.png" alt="logo5" width={149.1} height={72} />
-          <Image src="/brands/lg6.png" alt="logo6" width={149.1} height={72} />
-          <Image src="/brands/lg7.png" alt="logo7" width={149.1} height={72} />
+        <div className="flex flex-wrap justify-center opacity-100">
+          <Image
+            src="/brands/lg1.png"
+            alt="logo1"
+            width={149.1}
+            height={72}
+            priority
+          />
+          <Image
+            src="/brands/lg2.png"
+            alt="logo2"
+            width={149.1}
+            height={72}
+            priority
+          />
+          <Image
+            src="/brands/lg3.png"
+            alt="logo3"
+            width={149.1}
+            height={72}
+            priority
+          />
+          <Image
+            src="/brands/lg4.png"
+            alt="logo4"
+            width={149.1}
+            height={72}
+            priority
+          />
+          <Image
+            src="/brands/lg5.png"
+            alt="logo5"
+            width={149.1}
+            height={72}
+            priority
+          />
+          <Image
+            src="/brands/lg6.png"
+            alt="logo6"
+            width={149.1}
+            height={72}
+            priority
+          />
+          <Image
+            src="/brands/lg7.png"
+            alt="logo7"
+            width={149.1}
+            height={72}
+            priority
+          />
         </div>
 
         <hr className="mt-12.5 w-7xl border-t border-dashed border-white/20" />

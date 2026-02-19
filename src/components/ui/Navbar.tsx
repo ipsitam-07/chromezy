@@ -6,7 +6,7 @@ import { NAVBAR_LABELS, navItems } from "@/utils/constants";
 const Navbar: React.FunctionComponent = () => {
   return (
     <>
-      <nav className="bg-navbar-background fixed top-0 z-50 hidden h-17 w-full border-b border-white/5 backdrop-blur-sm lg:flex">
+      <nav className="bg-navbar-background fixed top-0 z-50 hidden h-[64px] w-full border-b border-white/5 backdrop-blur-sm lg:flex">
         <div className="mx-auto flex w-full max-w-350 items-center justify-between px-10 pt-3 pb-2">
           <div className="flex items-center gap-6">
             <Link href="/" className="shrink-0">

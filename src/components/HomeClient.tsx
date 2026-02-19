@@ -214,7 +214,7 @@ export const HomeClient = () => {
               {HOME_STRINGS.HERO_BADGE}
             </p>
           </div>
-          <h1 className="text-4xl leading-snug font-bold md:text-6xl">
+          <h1 className="text-[64px] leading-snug font-semibold md:text-[64px]">
             {HOME_STRINGS.TITLE_PART_1}{" "}
             <span className="bg-background-secondary bg-clip-text text-transparent">
               {HOME_STRINGS.CONCEPT}
@@ -228,7 +228,7 @@ export const HomeClient = () => {
         </motion.div>
 
         <motion.div style={{ y: yTransformSubheading, opacity: textOpacity }}>
-          <p className="text-text-accent mt-4 text-lg">
+          <p className="text-text-accent mt-1 text-[24px]">
             {HOME_STRINGS.SUBHEADING}
           </p>
         </motion.div>
@@ -240,7 +240,7 @@ export const HomeClient = () => {
         </motion.div>
 
         <motion.div style={{ y: yTransformStats, opacity: textOpacity }}>
-          <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4">
+          <div className="mt-18 mb-4 grid grid-cols-2 gap-8 md:grid-cols-4">
             {STATS_DATA.map((stat, i) => (
               <Stat key={i} value={stat.value} label={stat.label} />
             ))}
