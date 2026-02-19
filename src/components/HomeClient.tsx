@@ -48,7 +48,7 @@ export const HomeClient = () => {
       100 + 115 - 100,
       100 + 115 - 100 + 20,
       100 + 115 - 100 + 20 + 400,
-      90,
+      40,
     ]
   );
 
@@ -107,6 +107,7 @@ export const HomeClient = () => {
 
   const yTransformStats = useTransform(scrollY, [0, viewportHeight], [0, -250]);
 
+  //traingle animation
   const triangleY = useTransform(
     scrollY,
     [
@@ -120,8 +121,8 @@ export const HomeClient = () => {
 
   const triangleX = useTransform(
     scrollY,
-    [0, viewportHeight],
-    [-800, -800 + 100]
+    [0, viewportHeight, viewportHeight * 2],
+    [-800, -800 + 50, -650]
   );
 
   const triangleScale = useTransform(
@@ -133,7 +134,7 @@ export const HomeClient = () => {
       viewportHeight * 2,
       viewportHeight * 3,
     ],
-    [1, 0.5, 0.24, 0.85, 1.3]
+    [1, 0.5, 0.24, 0.7, 1]
   );
 
   const triangleFilter = useTransform(
@@ -149,7 +150,7 @@ export const HomeClient = () => {
 
   const triangleOpacity = useTransform(
     scrollY,
-    [viewportHeight * 3, viewportHeight * 3 + viewportHeight / 4],
+    [viewportHeight * 3, viewportHeight * 3 + viewportHeight / 1],
     [1, 0]
   );
 

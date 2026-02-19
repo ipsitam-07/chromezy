@@ -79,7 +79,7 @@ function OurClients() {
             {CLIENT_SECTION_STRINGS.TITLE}
           </h2>
 
-          <p className="max-w-[600px] text-[clamp(14px,3vw,16px)] font-normal tracking-wide text-[#ffffffcc]">
+          <p className="max-w-150 text-[clamp(14px,3vw,16px)] font-normal tracking-wide text-[#ffffffcc]">
             {CLIENT_SECTION_STRINGS.DESCRIPTION}
           </p>
         </div>
@@ -95,7 +95,7 @@ function OurClients() {
               fill="currentColor"
               strokeWidth="0"
               viewBox="0 0 512 512"
-              className="h-[18px] w-[18px] text-white"
+              className="h-4.5 w-4.5 text-white"
               height="1em"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +119,7 @@ function OurClients() {
               fill="currentColor"
               strokeWidth="0"
               viewBox="0 0 512 512"
-              className="h-[18px] w-[18px] text-white"
+              className="h-4.5 w-4.5 text-white"
               height="1em"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
@@ -147,7 +147,7 @@ function OurClients() {
             className="flex w-max gap-6"
           >
             {TESTIMONIALS.map((t) => (
-              <div key={t.key} className="flex-shrink-0">
+              <div key={t.key} className="shrink-0">
                 <TestimonialCard
                   feedback={t.feedback}
                   name={t.name}

@@ -4,7 +4,7 @@ import { INNOVATIVE_STRINGS } from "@/utils/constants";
 function InnvovativeTechWrap() {
   return (
     <div className="relative mx-auto mb-[60px] min-h-[859px] w-full max-w-[488px] overflow-hidden rounded-[80px]">
-      <div className="absolute inset-0 border border-white/20 bg-gradient-to-b from-[#282E6C] from-0% from-100% to-[#BDD5F4] opacity-50 backdrop-blur-lg" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#282E6C] to-[#BDD5F4]/20 opacity-50 backdrop-blur-3xl" />
 
       <div className="absolute top-0 left-0 h-full w-full overflow-hidden rounded-[32px]">
         <div className="absolute top-[-10%] right-[-10%] h-[200px] w-[200px] bg-[radial-gradient(circle,rgba(67,128,255,0.3),rgba(17,222,255,0.1))] blur-3xl" />

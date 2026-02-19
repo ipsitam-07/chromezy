@@ -24,9 +24,9 @@ export default function FeaturedCard({
         ease: "easeOut",
         delay: index * 0.1,
       }}
-      className="group flex max-h-[444px] w-full max-w-[420px] cursor-pointer flex-col rounded-[20px] bg-black/20 p-4 backdrop-blur-sm"
+      className="group flex max-h-111 w-full max-w-105 cursor-pointer flex-col rounded-[20px] bg-black/20 p-4 backdrop-blur-sm"
     >
-      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[8px]">
+      <div className="relative aspect-video w-full overflow-hidden rounded-md">
         <Image
           src={imgSrc}
           alt={title}
@@ -37,7 +37,7 @@ export default function FeaturedCard({
 
       <div className="flex flex-col gap-3 pt-6 pb-2">
         <div className="flex items-start justify-between gap-4">
-          <h3 className="font-sora max-w-[85%] pt-[0px] text-left text-[16px] font-semibold text-white transition-colors duration-300 group-hover:text-blue-400">
+          <h3 className="font-sora max-w-[85%] text-left text-[16px] font-semibold text-white transition-colors duration-300 group-hover:text-blue-400">
             {title}
           </h3>
 

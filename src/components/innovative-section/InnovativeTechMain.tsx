@@ -13,22 +13,14 @@ function InnovateTechMain() {
     offset: ["start end", "end start"],
   });
 
-  const sphereY = useTransform(
-    scrollYProgress,
-    [0, 0.2, 0.8, 1],
-    [800, 100, 0, -200]
-  );
+  const sphereY = useTransform(scrollYProgress, [0.5, 1], [800, -200]);
 
-  const sphereX = useTransform(
-    scrollYProgress,
-    [0, 0.3, 0.7, 1],
-    [-300, 0, 0, -300]
-  );
+  const sphereX = useTransform(scrollYProgress, [0.5, 1], [0, -300]);
 
   const sphereScale = useTransform(
     scrollYProgress,
     [0, 0.3, 0.7, 1],
-    [1, 2.5, 2.5, 1]
+    [1, 2.5, 2, 1]
   );
 
   const sphereRotate = useTransform(scrollYProgress, [0, 1], [0, 180]);
@@ -66,10 +58,10 @@ function InnovateTechMain() {
         ref={containerRef}
         className="relative z-30 w-full px-6 py-25 md:px-10 lg:px-20"
       >
-        <div className="pointer-events-none absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle,rgba(67,128,255,0.1),rgba(157,132,242,0.05))] blur-3xl" />
+        <div className="pointer-events-none absolute top-1/2 left-1/2 h-150 w-150 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle,rgba(67,128,255,0.1),rgba(157,132,242,0.05))] blur-3xl" />
 
-        <div className="relative z-10 mx-auto flex max-w-[1400px] flex-col items-start justify-between gap-12 lg:flex-row lg:gap-16">
-          <div className="w-full flex-shrink-0 lg:sticky lg:top-24 lg:h-fit lg:w-auto">
+        <div className="relative z-10 mx-auto flex max-w-350 flex-col items-start justify-between gap-12 lg:flex-row lg:gap-16">
+          <div className="w-full shrink-0 lg:sticky lg:top-24 lg:h-fit lg:w-auto">
             <InnvovativeTechWrap />
           </div>
 

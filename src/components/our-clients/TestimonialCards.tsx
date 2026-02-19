@@ -25,9 +25,9 @@ const TestimonialCards: React.FC<TestimonialCardsProps> = ({
         />
       </div>
 
-      <div className="mt-2.5 flex h-[282px] flex-col justify-between pb-6">
+      <div className="mt-2.5 flex h-70.5 flex-col justify-between pb-6">
         <p
-          className={`font-sora mb-6 min-h-[192px] text-left leading-relaxed font-bold text-white opacity-100 drop-shadow-white`}
+          className={`font-sora mb-6 min-h-48 text-left leading-relaxed font-bold text-white opacity-100 drop-shadow-white`}
         >
           {feedback}
         </p>
@@ -52,13 +52,13 @@ const TestimonialCards: React.FC<TestimonialCardsProps> = ({
         <div className="grid grid-cols-2 items-center gap-4 text-xs">
           <div className="flex flex-col justify-center py-4 text-left">
             <div className="text-[10px] font-normal whitespace-nowrap text-white/90">
-              <p className="leading-[20px]">
+              <p className="leading-5">
                 {TESTIMONIAL_LABELS.STAR_RATING} – {starRating}
               </p>
-              <p className="leading-[20px]">
+              <p className="leading-5">
                 {TESTIMONIAL_LABELS.PROJECT} – {project}
               </p>
-              <p className="leading-[20px]">
+              <p className="leading-5">
                 {TESTIMONIAL_LABELS.COUNTRY} – {country}
               </p>
             </div>

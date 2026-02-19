@@ -59,7 +59,7 @@ function ProductEngineering() {
           {LAYOUT_CONSTANTS.SECTION_TITLE}
         </h2>
 
-        <p className="max-w-[720px] text-left text-[clamp(14px,3vw,16px)] leading-relaxed font-light tracking-wide text-[#ffffffcc]">
+        <p className="max-w-180 text-left text-[clamp(14px,3vw,16px)] leading-relaxed font-light tracking-wide text-[#ffffffcc]">
           {LAYOUT_CONSTANTS.SECTION_DESCRIPTION}
         </p>
       </motion.div>

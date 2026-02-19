@@ -33,7 +33,7 @@ function ContactScreen() {
 
   const envelopeScale = useTransform(scrollYProgress, [0.05, 0.24], [1, 0.8]);
 
-  const envelopeOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0.5]);
+  const envelopeOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 1]);
 
   const blur = useTransform(scrollYProgress, [0, 0.05, 0.33], [0, 0, 0.5]);
   const blurFilter = useTransform(blur, (v) => `blur(${v}px)`);
@@ -47,9 +47,9 @@ function ContactScreen() {
       ref={sectionRef}
       className="relative z-30 mt-10 mb-40 w-full px-6 md:px-10 lg:px-20"
     >
-      <div className="relative mx-auto min-h-[760px] w-full max-w-[1320px] rounded-[40px] shadow-2xl lg:rounded-[80px]">
+      <div className="relative mx-auto min-h-190 w-full max-w-330 rounded-[40px] shadow-2xl lg:rounded-[80px]">
         <div className="absolute inset-0 z-0 flex flex-col overflow-hidden rounded-[40px] bg-[#AACFFE] lg:flex-row lg:rounded-[80px]">
-          <div className="absolute inset-0 lg:relative lg:h-[760px] lg:w-[840px] lg:flex-shrink-0">
+          <div className="absolute inset-0 lg:relative lg:h-190 lg:w-210 lg:shrink-0">
             <Image
               src="/contact/formBg.png"
               fill
@@ -59,16 +59,16 @@ function ContactScreen() {
           </div>
         </div>
 
-        <div className="relative z-10 flex min-h-[760px] w-full flex-col lg:flex-row">
+        <div className="relative z-10 flex min-h-190 w-full flex-col lg:flex-row">
           <motion.div
             style={{
               scale: cartoonScale,
               y: cartoonY,
               opacity: cartoonOpacity,
             }}
-            className="relative z-20 mx-auto mt-12 flex w-full max-w-[420px] flex-col items-center gap-[8px] px-8 py-12 lg:absolute lg:top-1/2 lg:left-[240px] lg:mt-0 lg:-translate-y-1/2"
+            className="relative z-20 mx-auto mt-12 flex w-full max-w-105 flex-col items-center gap-2 px-8 py-12 lg:absolute lg:top-1/2 lg:left-60 lg:mt-0 lg:-translate-y-1/2"
           >
-            <div className="relative h-[320px] w-[314px]">
+            <div className="relative h-80 w-78.5">
               <Image
                 src="/contact/cartoon.png"
                 fill
@@ -81,11 +81,11 @@ function ContactScreen() {
               {CONTACT_US_STRINGS.HEADING}
             </h2>
 
-            <p className="max-w-[360px] text-center text-sm leading-relaxed text-white">
+            <p className="max-w-90 text-center text-sm leading-relaxed text-white">
               {CONTACT_US_STRINGS.DESCRIPTION}
             </p>
 
-            <div className="mt-[24px] flex max-h-[120px] w-full max-w-[420px] flex-col gap-4 rounded-[12px] bg-[#A0FB8E]/60 px-6 py-5 text-white shadow-lg backdrop-blur-sm">
+            <div className="mt-6 flex max-h-30 w-full max-w-105 flex-col gap-4 rounded-lg bg-[#A0FB8E]/60 px-6 py-5 text-white shadow-lg backdrop-blur-sm">
               <div className="flex items-center justify-between gap-3 border-b border-black/10 pb-4 text-sm">
                 <span className="flex items-center gap-2">
                   <Image
@@ -129,7 +129,7 @@ function ContactScreen() {
               }, 300);
             }}
             viewport={{ once: true, amount: 0.5 }}
-            className="relative z-20 mx-auto my-10 max-h-[638px] w-full max-w-[500px] rounded-[20px] bg-[#DBEBFF] p-8 shadow-2xl lg:absolute lg:top-1/2 lg:right-10 lg:my-0 lg:-translate-y-1/2 lg:rounded-[32px]"
+            className="relative z-20 mx-auto my-10 max-h-159.5 w-full max-w-125 rounded-[20px] bg-[#DBEBFF] p-8 shadow-2xl lg:absolute lg:top-1/2 lg:right-10 lg:my-0 lg:-translate-y-1/2 lg:rounded-4xl"
           >
             <motion.div
               style={{
@@ -138,10 +138,9 @@ function ContactScreen() {
                 scale: envelopeScale,
                 opacity: envelopeOpacity,
                 filter: blurFilter,
-                transformOrigin: "80% 20%",
                 zIndex: 0,
               }}
-              className="absolute top-0 right-0 h-[40px] w-[50px] lg:h-[200px] lg:w-[200px]"
+              className="absolute top-0 right-0 h-10 w-12.5 lg:h-50 lg:w-50"
             >
               <Image
                 src="/line-mail.png"
@@ -153,7 +152,7 @@ function ContactScreen() {
 
             {/* Form Content */}
             <div className="relative z-10">
-              <h3 className="font-sora mb-[20px] text-left text-[24px] font-semibold text-black">
+              <h3 className="font-sora mb-5 text-left text-[24px] font-semibold text-black">
                 {CONTACT_US_STRINGS.FORM.HEADER}
               </h3>
 
@@ -163,7 +162,7 @@ function ContactScreen() {
                   <input
                     type="text"
                     name="name"
-                    className="mt-[4px] h-[36px] w-full rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all"
+                    className="mt-1 h-9 w-full rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all"
                     required
                   />
                 </label>
@@ -173,7 +172,7 @@ function ContactScreen() {
                   <input
                     type="email"
                     name="email"
-                    className="mt-[4px] h-[36px] w-full rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all"
+                    className="mt-1 h-9 w-full rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all"
                     required
                   />
                 </label>
@@ -183,7 +182,7 @@ function ContactScreen() {
                   <input
                     type="tel"
                     name="phone"
-                    className="mt-[4px] h-[36px] w-full rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all"
+                    className="mt-1 h-9 w-full rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all"
                     required
                   />
                 </label>
@@ -193,7 +192,7 @@ function ContactScreen() {
                   <input
                     type="text"
                     name="lookingFor"
-                    className="mt-[4px] h-[36px] w-full rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all"
+                    className="mt-1 h-9 w-full rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all"
                     required
                   />
                 </label>
@@ -203,14 +202,14 @@ function ContactScreen() {
                   <textarea
                     name="message"
                     rows={4}
-                    className="mt-[4px] w-full resize-none rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all"
+                    className="mt-1 w-full resize-none rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all"
                     required
                   />
                 </label>
 
                 <button
                   type="submit"
-                  className="h-[56px] w-full rounded-[80px] bg-black text-sm font-medium text-white shadow-lg transition-all hover:bg-gray-900 hover:shadow-xl active:scale-[0.98]"
+                  className="h-14 w-full rounded-[80px] bg-black text-sm font-medium text-white shadow-lg transition-all hover:bg-gray-900 hover:shadow-xl active:scale-[0.98]"
                 >
                   {CONTACT_US_STRINGS.FORM.SEND}
                 </button>
