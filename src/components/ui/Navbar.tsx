@@ -1,9 +1,42 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { NAVBAR_LABELS, navItems } from "@/utils/constants";
 
-const Navbar: React.FunctionComponent = () => {
+function Navbar() {
+  const [activeSection, setActiveSection] = useState<string>("home");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries.find((entry) => entry.isIntersecting);
+        if (visibleSection) {
+          setActiveSection(visibleSection.target.id);
+        }
+      },
+      {
+        rootMargin: "-50% 0px -50% 0px",
+      }
+    );
+    navItems.forEach((item) => {
+      if (item.target && item.id !== "home") {
+        const section = document.getElementById(item.target);
+        if (section) observer.observe(section);
+      }
+    });
+
+    const handleTopScroll = () => {
+      if (window.scrollY < 50) setActiveSection("home");
+    };
+    window.addEventListener("scroll", handleTopScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", handleTopScroll);
+    };
+  }, []);
+
   return (
     <>
       <nav className="bg-navbar-background fixed top-0 z-50 hidden h-16 w-full border-b border-white/5 backdrop-blur-sm lg:flex">
@@ -36,20 +69,34 @@ const Navbar: React.FunctionComponent = () => {
 
           <ul className="absolute left-1/2 flex w-130 -translate-x-1/2 transform items-center justify-center gap-8 border-b border-white/10 pb-2">
             {navItems.map((eachItem) => {
-              const active = eachItem.id === "home";
+              const isHome = eachItem.id === "home";
+              const active =
+                activeSection === (isHome ? "home" : eachItem.target);
 
               return (
                 <li key={eachItem.id} className="relative">
-                  <Link
-                    href={`/${eachItem.id === "home" ? "" : eachItem.id}`}
-                    className={`text-xs font-medium transition-colors hover:text-white ${
-                      active ? "text-white" : "text-white"
-                    }`}
-                  >
-                    {eachItem.label}
-                  </Link>
+                  {isHome ? (
+                    <Link
+                      href="/"
+                      className={`text-xs font-medium transition-colors hover:text-white ${
+                        active ? "text-white" : "text-white"
+                      }`}
+                    >
+                      {eachItem.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={`#${eachItem.target}`}
+                      className={`text-xs font-medium transition-colors ${
+                        active ? "text-white" : "text-white hover:text-white"
+                      }`}
+                    >
+                      {eachItem.label}
+                    </a>
+                  )}
+
                   {active && (
-                    <span className="from-background-primary to-background-secondary absolute -bottom-[9.5px] left-0 h-0.5 w-full bg-linear-to-r" />
+                    <span className="from-background-primary to-background-secondary absolute -bottom-[9.5px] left-0 h-0.5 w-full bg-linear-to-r transition-all duration-300" />
                   )}
                 </li>
               );
@@ -74,6 +121,6 @@ const Navbar: React.FunctionComponent = () => {
       </nav>
     </>
   );
-};
+}
 
 export default Navbar;

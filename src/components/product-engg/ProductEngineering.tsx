@@ -4,8 +4,9 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ServiceCard from "./ProductServiceCard";
 import { LAYOUT_CONSTANTS, SERVICE_CARD_CONTENT } from "@/utils/constants";
+import { SectionProps } from "../interfaces/props";
 
-function ProductEngineering() {
+function ProductEngineering({ id }: SectionProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -27,7 +28,7 @@ function ProductEngineering() {
   const yContent = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
   return (
-    <div
+    <section
       ref={containerRef}
       className={`font-sora relative z-30 mt-32 w-full px-6 antialiased md:px-10 lg:px-20`}
     >
@@ -75,7 +76,7 @@ function ProductEngineering() {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

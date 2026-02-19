@@ -8,8 +8,9 @@ import {
 import { useRef, useState, useEffect } from "react";
 import TestimonialCard from "./TestimonialCards";
 import { TESTIMONIALS, CLIENT_SECTION_STRINGS } from "@/utils/constants";
+import { SectionProps } from "../interfaces/props";
 
-function OurClients() {
+function OurClients({ id }: SectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [hasMounted, setHasMounted] = useState(false);
@@ -70,6 +71,7 @@ function OurClients() {
 
   return (
     <section
+      id={id}
       ref={sectionRef}
       className="relative z-30 mt-32 w-full px-6 md:px-10 lg:px-20"
     >

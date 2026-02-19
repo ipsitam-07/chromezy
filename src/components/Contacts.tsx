@@ -1,10 +1,11 @@
 "use client";
 import { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { CONTACT_US_STRINGS } from "@/utils/constants";
+import { SectionProps } from "./interfaces/props";
 
-function ContactScreen() {
+function ContactScreen({ id }: SectionProps) {
   const sectionRef = useRef(null);
   const nameInputRef = useRef<HTMLInputElement>(null);
 
@@ -44,6 +45,7 @@ function ContactScreen() {
 
   return (
     <div
+      id={id}
       ref={sectionRef}
       className="relative z-30 mt-10 mb-40 w-full px-6 md:px-10 lg:px-20"
     >

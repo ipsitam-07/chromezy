@@ -122,11 +122,11 @@ export const TESTIMONIAL_LABELS = {
 //Navbar section
 export const navItems = [
   { id: "home", label: "Home" },
-  { id: "exploreai", label: "Explore AI" },
-  { id: "services", label: "Services" },
-  { id: "ecommerce", label: "E-commerce" },
-  { id: "products", label: "Products" },
-  { id: "blogs", label: "Blogs" },
+  { id: "exploreai", label: "Explore AI", target: "innovate" },
+  { id: "services", label: "Services", target: "features" },
+  { id: "ecommerce", label: "E-commerce", target: "contact" },
+  { id: "products", label: "Products", target: "product-engineering" },
+  { id: "blogs", label: "Blogs", target: "success" },
 ];
 
 export const NAVBAR_LABELS = {

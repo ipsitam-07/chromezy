@@ -21,3 +21,7 @@ export interface FeaturedCardProps {
   title: string;
   description: string;
 }
+
+export interface SectionProps {
+  id?: string;
+}

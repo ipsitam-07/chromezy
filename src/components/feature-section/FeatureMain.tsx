@@ -1,10 +1,14 @@
 import { FEATURE_STRINGS } from "@/utils/constants";
 import FeaturedCard from "./FeatureCard";
 import { INSIGHTS } from "@/utils/constants";
+import { SectionProps } from "../interfaces/props";
 
-function FeatureMain() {
+function FeatureMain({ id }: SectionProps) {
   return (
-    <section className="relative z-30 mb-32 w-full px-6 md:px-10 lg:px-20">
+    <section
+      className="relative z-30 mb-32 w-full px-6 md:px-10 lg:px-20"
+      id={id}
+    >
       <div className="pointer-events-none absolute top-0 left-1/2 h-100 w-100 -translate-x-1/2 bg-[radial-gradient(circle,rgba(67,128,255,0.12),rgba(157,132,242,0.08))] blur-3xl" />
 
       <div className="relative z-10 mb-12 max-w-175">

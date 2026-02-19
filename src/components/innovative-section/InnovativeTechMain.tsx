@@ -4,8 +4,9 @@ import InnvovativeTechWrap from "./InnovativeTechWrap";
 import InnovativeTechStack from "./InnovativeTechStack";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { SectionProps } from "../interfaces/props";
 
-function InnovateTechMain() {
+function InnovateTechMain({ id }: SectionProps) {
   const containerRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -55,6 +56,7 @@ function InnovateTechMain() {
       </motion.div>
 
       <div
+        id={id}
         ref={containerRef}
         className="relative z-30 w-full px-6 py-25 md:px-10 lg:px-20"
       >

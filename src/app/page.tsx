@@ -82,12 +82,12 @@ const Home = () => {
 
         <hr className="mt-12.5 w-7xl border-t border-dashed border-white/20" />
 
-        <ProductEngineering />
-        <OurClients />
-        <SuccessStories />
-        <InnovateTechMain />
-        <FeatureMain />
-        <ContactScreen />
+        <ProductEngineering id="product-engineering" />
+        <OurClients id="clients" />
+        <SuccessStories id="success" />
+        <InnovateTechMain id="innovate" />
+        <FeatureMain id="features" />
+        <ContactScreen id="contact" />
       </section>
       <Footer />
     </>

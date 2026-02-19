@@ -1,9 +1,13 @@
 import Image from "next/image";
 import { STORIES, SUCCESS_STRING } from "@/utils/constants";
+import { SectionProps } from "./interfaces/props";
 
-function SuccessStories() {
+function SuccessStories({ id }: SectionProps) {
   return (
-    <div className="relative z-30 mt-32 w-full px-6 py-10 md:px-10 lg:px-20">
+    <div
+      id={id}
+      className="relative z-30 mt-32 w-full px-6 py-10 md:px-10 lg:px-20"
+    >
       <div className="pointer-events-none absolute top-0 left-1/2 h-100 w-100 -translate-x-1/2 bg-[radial-gradient(circle,rgba(67,128,255,0.12),rgba(157,132,242,0.08))] blur-3xl" />
 
       <div className="relative z-10 mb-6 grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
