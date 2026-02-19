@@ -85,8 +85,6 @@ export const HomeClient = () => {
     ["blur(0px)", "blur(10px)"]
   );
 
-  //Text
-
   const textOpacity = useTransform(scrollY, [0, viewportHeight * 1.5], [1, 0]);
 
   const yTransformHeader = useTransform(
