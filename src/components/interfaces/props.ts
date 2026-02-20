@@ -25,3 +25,7 @@ export interface FeaturedCardProps {
 export interface SectionProps {
   id?: string;
 }
+
+export interface FeatureCardPropsWithIndex extends FeaturedCardProps {
+  index: number;
+}

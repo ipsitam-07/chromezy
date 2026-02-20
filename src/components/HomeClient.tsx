@@ -25,8 +25,10 @@ function HomeClient({ id }: SectionProps) {
       viewportHeight * 4,
       viewportHeight * 5,
       viewportHeight * 6,
+      viewportHeight * 6 + viewportHeight / 4,
+      viewportHeight * 7,
     ],
-    [570, 420, 417, 145, 100]
+    [570, 420, 417, 145, 100, -100, -100]
   );
 
   const y = useTransform(
@@ -34,23 +36,14 @@ function HomeClient({ id }: SectionProps) {
     [
       0,
       viewportHeight,
-      viewportHeight + viewportHeight / 4,
+      viewportHeight * 1.25,
       viewportHeight * 2,
       viewportHeight * 3,
       viewportHeight * 4,
-      viewportHeight * 4 + viewportHeight / 2,
+      viewportHeight * 5.25,
       viewportHeight * 6,
     ],
-    [
-      100,
-      100 + 115,
-      100 + 115,
-      100 + 115 - 300,
-      100 + 115 - 100,
-      100 + 115 - 100 + 20,
-      100 + 115 - 100 + 20 + 400,
-      40,
-    ]
+    [100, 215, 215, -85, 115, 135, 250, 40]
   );
 
   const scale = useTransform(
@@ -63,9 +56,10 @@ function HomeClient({ id }: SectionProps) {
       viewportHeight * 4,
       viewportHeight * 5,
       viewportHeight * 6,
+      viewportHeight * 6 + viewportHeight / 4,
       viewportHeight * 7,
     ],
-    [1, 2, 1, 1.9, 2.5, 1.5, 1.3, 1]
+    [1, 2, 1, 1.9, 2, 1.3, 1, 0.5, 0.5]
   );
 
   const ballOpacity = useTransform(

@@ -18,7 +18,7 @@ function ProductEngineering({ id }: SectionProps) {
 
   const opacityBall = useTransform(scrollYProgress, [0.3, 0.55], [1, 1]);
 
-  const scaleBall = useTransform(scrollYProgress, [0.3, 0.6], [1.8, 1]);
+  const scaleBall = useTransform(scrollYProgress, [0.3, 0.6], [1.8, 0.8]);
 
   const scaleBlur = useTransform(
     scrollYProgress,
@@ -41,7 +41,7 @@ function ProductEngineering({ id }: SectionProps) {
           scale: scaleBall,
           filter: scaleBlur,
         }}
-        className="pointer-events-none absolute top-0 right-40 z-40 hidden mix-blend-screen md:block"
+        className="pointer-events-none absolute top-0 right-40 z-0 hidden md:block"
       >
         <Image
           src="/shapes/MainBall.svg"

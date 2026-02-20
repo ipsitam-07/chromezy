@@ -11,7 +11,7 @@ const ProductServiceCard: React.FC<ProductServiceCardProps> = ({
 }) => {
   return (
     <div
-      className="group relative max-h-[436px] max-w-[308px] overflow-hidden rounded-[12px] transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
+      className="group max-h-109-w-[308px] relative overflow-hidden rounded-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
       style={{
         backgroundColor: bgColor,
         minHeight: SERVICE_CARD_UI.MIN_HEIGHT,
@@ -30,10 +30,10 @@ const ProductServiceCard: React.FC<ProductServiceCardProps> = ({
             src={svgSrc}
             alt={`${heading} service illustration`}
             fill
-            className="h-[149px] w-[153px] object-contain"
+            className="h-37.25 w-38.25 object-contain"
           />
         </div>
-        <div className="relative mt-[56px] flex flex-1 flex-col">
+        <div className="relative mt-14 flex flex-1 flex-col">
           <h3 className="mb-4 text-left text-2xl font-bold text-white">
             {heading}
           </h3>
