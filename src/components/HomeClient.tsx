@@ -4,8 +4,9 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { HOME_STRINGS, STATS_DATA } from "@/utils/constants";
+import { SectionProps } from "./interfaces/props";
 
-export const HomeClient = () => {
+function HomeClient({ id }: SectionProps) {
   const { scrollY } = useScroll();
   const [viewportHeight, setViewportHeight] = useState(1000);
 
@@ -202,7 +203,7 @@ export const HomeClient = () => {
         />
       </motion.div>
 
-      <div className="z-20 flex flex-col items-center">
+      <div className="z-20 flex flex-col items-center" id={id}>
         <motion.div style={{ y: yTransformHeader, opacity: textOpacity }}>
           <div className="flex h-14 items-center justify-center gap-2.5 py-4">
             <Image
@@ -252,7 +253,7 @@ export const HomeClient = () => {
       </div>
     </>
   );
-};
+}
 
 const Stat = ({ value, label }: { value: string; label: string }) => {
   return (
@@ -264,3 +265,5 @@ const Stat = ({ value, label }: { value: string; label: string }) => {
     </div>
   );
 };
+
+export default HomeClient;

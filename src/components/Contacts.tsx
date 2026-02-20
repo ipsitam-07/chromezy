@@ -11,7 +11,7 @@ function ContactScreen({ id }: SectionProps) {
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "center center"],
+    offset: ["start 50%", "center center"],
   });
 
   const cartoonScale = useTransform(scrollYProgress, [0, 0.5], [0.6, 1]);
@@ -20,7 +20,6 @@ function ContactScreen({ id }: SectionProps) {
   const cartoonOpacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
   const formY = useTransform(scrollYProgress, [0, 0.5], [-60, 0]);
-  const formOpacity = useTransform(scrollYProgress, [0, 0.5], [0.5, 1]);
 
   //envelope icon
 
@@ -124,7 +123,7 @@ function ContactScreen({ id }: SectionProps) {
           </motion.div>
 
           <motion.div
-            style={{ y: formY, opacity: formOpacity, overflow: formOverflow }}
+            style={{ y: formY, overflow: formOverflow }}
             onViewportEnter={() => {
               setTimeout(() => {
                 nameInputRef.current?.focus();

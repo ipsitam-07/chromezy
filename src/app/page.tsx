@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { HomeClient } from "@/components/HomeClient";
+import HomeClient from "@/components/HomeClient";
 import ProductEngineering from "@/components/product-engg/ProductEngineering";
 import OurClients from "@/components/our-clients/OurClients";
 import SuccessStories from "@/components/SuccessStories";

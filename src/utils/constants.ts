@@ -121,7 +121,7 @@ export const TESTIMONIAL_LABELS = {
 
 //Navbar section
 export const navItems = [
-  { id: "home", label: "Home" },
+  { id: "home", label: "Home", target: "hero" },
   { id: "exploreai", label: "Explore AI", target: "innovate" },
   { id: "services", label: "Services", target: "features" },
   { id: "ecommerce", label: "E-commerce", target: "contact" },

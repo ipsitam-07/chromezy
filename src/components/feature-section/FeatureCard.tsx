@@ -24,7 +24,7 @@ export default function FeaturedCard({
         ease: "easeOut",
         delay: index * 0.1,
       }}
-      className="group flex max-h-111 w-full max-w-105 cursor-pointer flex-col rounded-[20px] bg-black/20 p-4 backdrop-blur-sm"
+      className="group flex max-h-111 w-full max-w-105 cursor-pointer flex-col rounded-[20px] bg-black/20 p-4 backdrop-blur-2xl"
     >
       <div className="relative aspect-video w-full overflow-hidden rounded-md">
         <Image

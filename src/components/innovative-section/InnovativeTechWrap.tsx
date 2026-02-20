@@ -3,8 +3,8 @@ import { INNOVATIVE_STRINGS } from "@/utils/constants";
 
 function InnvovativeTechWrap() {
   return (
-    <div className="relative mx-auto mb-15 min-h-214.75 w-full max-w-122 overflow-hidden rounded-[80px]">
-      <div className="absolute inset-0 bg-linear-to-b from-[#282E6C] to-[#BDD5F4] opacity-30 backdrop-blur-3xl" />
+    <div className="relative mx-auto mb-15 min-h-214.75 w-full max-w-122 overflow-hidden rounded-[80px] bg-white/5 backdrop-blur-xl">
+      <div className="absolute inset-0 bg-linear-to-b from-[#282E6C] to-[#BDD5F4] opacity-10" />
 
       <div className="absolute top-0 left-0 h-full w-full overflow-hidden rounded-4xl">
         <div className="absolute top-[-10%] right-[-10%] h-50 w-50 bg-[radial-gradient(circle,rgba(67,128,255,0.3),rgba(17,222,255,0.1))] blur-3xl" />
@@ -27,7 +27,7 @@ function InnvovativeTechWrap() {
               src="/shapes/blob.png"
               alt="Innovative Tech Blob"
               fill
-              className="opw-[220px] h-auto object-contain opacity-70 sm:w-70 md:w-94"
+              className="opw-[220px] h-auto object-contain opacity-50 sm:w-70 md:w-94"
             />
           </div>
         </div>

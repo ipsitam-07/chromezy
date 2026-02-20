@@ -76,14 +76,14 @@ function Navbar() {
               return (
                 <li key={eachItem.id} className="relative">
                   {isHome ? (
-                    <Link
-                      href="/"
+                    <a
+                      href="#hero"
                       className={`text-xs font-medium transition-colors hover:text-white ${
                         active ? "text-white" : "text-white"
                       }`}
                     >
                       {eachItem.label}
-                    </Link>
+                    </a>
                   ) : (
                     <a
                       href={`#${eachItem.target}`}
