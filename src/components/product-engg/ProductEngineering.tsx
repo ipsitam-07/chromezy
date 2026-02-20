@@ -29,10 +29,11 @@ function ProductEngineering({ id }: SectionProps) {
 
   return (
     <section
+      id="product-engineering"
       ref={containerRef}
       className={`font-sora relative z-30 mt-32 w-full px-6 antialiased md:px-10 lg:px-20`}
     >
-      <div className="pointer-events-none absolute top-0 left-1/2 h-100 w-100 -translate-x-1/2 bg-[radial-gradient(circle,rgba(67,128,255,0.15),rgba(157,132,242,0.1))] blur-3xl" />
+      <div className="pointer-events-none absolute top-0 left-1/2 h-100 w-100 -translate-x-1/2 bg-[radial-gradient(circle,rgba(45,20,95,0.8)_0%,rgba(15,10,30,0)_70%)] blur-3xl" />
 
       <motion.div
         style={{

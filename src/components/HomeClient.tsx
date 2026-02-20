@@ -11,9 +11,12 @@ function HomeClient({ id }: SectionProps) {
   const [viewportHeight, setViewportHeight] = useState(1000);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    const handleResize = () => {
       setViewportHeight(window.innerHeight);
-    }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   //Ball animation

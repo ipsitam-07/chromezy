@@ -15,7 +15,7 @@ const Home = () => {
         <div className="pointer-events-none absolute top-0 left-1/2 h-50 w-150 -translate-x-1/2 bg-[radial-gradient(circle,rgba(9,93,255,1),rgba(191,9,255,0.3))] blur-3xl" />
         <div className="pointer-events-none absolute top-0 left-0 h-50 w-75 -translate-x-1/2 bg-[radial-gradient(circle,rgba(9,93,255,0.5),rgba(191,9,255,0))] opacity-40 blur-2xl" />
         <div className="pointer-events-none absolute top-[90vh] left-0 h-75 w-150 translate-x-[-50%] bg-[radial-gradient(circle,rgba(9,93,255,0.5),rgba(191,9,255,0))] blur-3xl" />
-        <div className="pointer-events-none absolute top-[50vh] right-0 h-75 w-150 translate-x-[50%] bg-[radial-gradient(circle,rgba(9,93,255,0.5),rgba(191,9,255,0))] blur-3xl" />
+        <div className="pointer-events-none absolute top-[60vh] right-0 h-85 w-200 translate-x-[50%] bg-[radial-gradient(circle,rgba(9,93,255,0.5),rgba(191,9,255,0))] opacity-50 blur-3xl" />
 
         <Image
           src="/shapes/rose2.png"
@@ -88,6 +88,9 @@ const Home = () => {
         <InnovateTechMain id="innovate" />
         <FeatureMain id="features" />
         <ContactScreen id="contact" />
+        <div className="pointer-events-none relative flex h-0 w-full justify-center">
+          <div className="absolute -bottom-37.5 left-0 z-0 h-100 w-[500] bg-[radial-gradient(circle,rgba(9,93,255,1),rgba(191,9,255,0.3))] opacity-40 blur-3xl" />
+        </div>
       </section>
       <Footer />
     </>

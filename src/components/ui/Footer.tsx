@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Footer: React.FC = () => {
+function Footer() {
   return (
-    <footer className="relative z-50 border-t border-white/5 bg-black px-6 pt-16 pb-6 text-gray-300 sm:px-10 md:px-20 lg:px-30">
+    <footer className="relative z-50 border-t border-white/5 bg-black/60 px-6 pt-16 pb-6 text-gray-300 sm:px-10 md:px-20 lg:px-30">
       <div className="pointer-events-none absolute top-0 left-1/2 w-150 -translate-x-1/2 bg-[radial-gradient(circle,rgba(67,128,255,0.08),rgba(157,132,242,0.04))] blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-360">
@@ -174,6 +174,6 @@ const Footer: React.FC = () => {
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

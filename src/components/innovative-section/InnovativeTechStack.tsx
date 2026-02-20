@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 function InnovativeTechStack() {
   return (
     <div className="m-h-[117px] w-full max-w-212.5 space-y-10 pt-20 text-white">
-      {CATEGORIES.map((cat, index) => (
+      {CATEGORIES.map((cat) => (
         <motion.div
           key={cat.id}
           initial={{ opacity: 0, y: 50 }}

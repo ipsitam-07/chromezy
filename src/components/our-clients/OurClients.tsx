@@ -16,7 +16,10 @@ function OurClients({ id }: SectionProps) {
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
-    setHasMounted(true);
+    const timeoutId = setTimeout(() => {
+      setHasMounted(true);
+    }, 0);
+    return () => clearTimeout(timeoutId);
   }, []);
 
   const { scrollYProgress } = useScroll({
