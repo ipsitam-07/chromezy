@@ -27,7 +27,7 @@ function OurClients({ id }: SectionProps) {
     offset: ["start end", "end start"],
   });
 
-  const entryX = useTransform(scrollYProgress, [0.1, 0.4], [200, 0]);
+  const entryX = useTransform(scrollYProgress, [0.1, 0.4], [100, 0]);
   const opacity = useTransform(scrollYProgress, [0.1, 0.3], [0, 1]);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
@@ -35,8 +35,8 @@ function OurClients({ id }: SectionProps) {
       const container = scrollContainerRef.current;
       const maxScroll = container.scrollWidth - container.clientWidth;
 
-      const startScroll = 0.75;
-      const endScroll = 1.0;
+      const startScroll = 0.5;
+      const endScroll = 0.8;
 
       let progress = 0;
       if (latest > startScroll) {
