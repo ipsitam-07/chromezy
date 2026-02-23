@@ -208,6 +208,7 @@ function HomeClient({ id }: SectionProps) {
               alt="magic wand"
               width={16}
               height={16}
+              priority
             />
             <p className="font-inter text-text-hero font-medium">
               {HOME_STRINGS.HERO_BADGE}
