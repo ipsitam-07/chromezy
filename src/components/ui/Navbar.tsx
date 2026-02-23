@@ -8,6 +8,16 @@ function Navbar() {
   const [activeSection, setActiveSection] = useState<string>("home");
 
   useEffect(() => {
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+    window.scrollTo(0, 0);
+    if (window.location.hash) {
+      history.replaceState(null, "", window.location.pathname);
+    }
+  }, []);
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const visibleSection = entries.find((entry) => entry.isIntersecting);
