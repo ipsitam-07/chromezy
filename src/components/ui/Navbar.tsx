@@ -68,6 +68,7 @@ function Navbar() {
                 width={16}
                 height={16}
                 className="absolute top-1/2 left-3 -translate-y-1/2 opacity-100"
+                priority
               />
               <input
                 type="text"
