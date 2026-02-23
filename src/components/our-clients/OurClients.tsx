@@ -5,7 +5,7 @@ import {
   useTransform,
   motion,
 } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useLayoutEffect } from "react";
 import TestimonialCard from "./TestimonialCards";
 import { TESTIMONIALS, CLIENT_SECTION_STRINGS } from "@/utils/constants";
 import { SectionProps } from "../interfaces/props";
@@ -15,7 +15,7 @@ function OurClients({ id }: SectionProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [hasMounted, setHasMounted] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const timeoutId = setTimeout(() => {
       setHasMounted(true);
     }, 0);

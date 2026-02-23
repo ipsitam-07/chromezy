@@ -29,7 +29,7 @@ function ProductEngineering({ id }: SectionProps) {
 
   return (
     <section
-      id="product-engineering"
+      id={id}
       ref={containerRef}
       className={`font-sora relative z-30 mt-32 w-full px-6 antialiased md:px-10 lg:px-20`}
     >

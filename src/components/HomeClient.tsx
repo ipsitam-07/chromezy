@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { HOME_STRINGS, STATS_DATA } from "@/utils/constants";
 import { SectionProps } from "./interfaces/props";
@@ -10,7 +10,7 @@ function HomeClient({ id }: SectionProps) {
   const { scrollY } = useScroll();
   const [viewportHeight, setViewportHeight] = useState(1000);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const handleResize = () => {
       setViewportHeight(window.innerHeight);
     };
