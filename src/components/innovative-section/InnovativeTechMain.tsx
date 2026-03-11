@@ -1,36 +1,27 @@
 "use client";
+
 import { useRef } from "react";
-import InnvovativeTechWrap from "./InnovativeTechWrap";
-import InnovativeTechStack from "./InnovativeTechStack";
-import { motion, useScroll, useTransform } from "framer-motion";
+import dynamic from "next/dynamic";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { SectionProps } from "@/types";
+import { useInnovativeAnimations } from "@/hooks/useInnovativeAnimations";
+import InnvovativeTechWrap from "./InnovativeTechWrap";
+import { INNOVATIVE_STRINGS } from "@/utils/constants";
+
+const InnovativeTechStack = dynamic(() => import("./InnovativeTechStack"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full pt-20 text-white/20">
+      {INNOVATIVE_STRINGS.LOADING}
+    </div>
+  ),
+});
 
 function InnovateTechMain({ id }: SectionProps) {
-  const containerRef = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-
-  const sphereY = useTransform(scrollYProgress, [0.5, 1], [800, -200]);
-
-  const sphereX = useTransform(scrollYProgress, [0.5, 1], [0, -300]);
-
-  const sphereScale = useTransform(
-    scrollYProgress,
-    [0, 0.3, 0.7, 1],
-    [1, 2.5, 2, 1]
-  );
-
-  const sphereRotate = useTransform(scrollYProgress, [0, 1], [0, 180]);
-
-  const sphereOpacity = useTransform(
-    scrollYProgress,
-    [0, 0.2, 0.8, 1],
-    [0, 1, 1, 0]
-  );
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { sphereY, sphereX, sphereScale, sphereRotate, sphereOpacity } =
+    useInnovativeAnimations(containerRef);
 
   return (
     <>
@@ -66,7 +57,6 @@ function InnovateTechMain({ id }: SectionProps) {
           <div className="w-full shrink-0 lg:sticky lg:top-24 lg:h-fit lg:w-auto">
             <InnvovativeTechWrap />
           </div>
-
           <div className="w-full lg:flex-1">
             <InnovativeTechStack />
           </div>

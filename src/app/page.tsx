@@ -1,17 +1,35 @@
 import Image from "next/image";
+import type { Metadata } from "next";
+import {
+  OurClients,
+  InnovateTechMain,
+  FeatureMain,
+  ContactScreen,
+} from "@/components/DynamicSections";
 import HomeClient from "@/components/HomeClient";
 import ProductEngineering from "@/components/product-engg/ProductEngineering";
-import OurClients from "@/components/our-clients/OurClients";
 import SuccessStories from "@/components/SuccessStories";
-import InnovateTechMain from "@/components/innovative-section/InnovativeTechMain";
-import FeatureMain from "@/components/feature-section/FeatureMain";
 import Footer from "@/components/ui/Footer";
-import ContactScreen from "@/components/Contacts";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Home — Software & Digital Transformation",
+    description:
+      "Chromezy transforms your concept into market-ready reality. " +
+      "Explore our MVP, SaaS, AI, and e-commerce engineering services.",
+    openGraph: {
+      title: "Chromezy — From Concept to Reality",
+      description:
+        "Software engineering and digital transformation. " +
+        "MVP, SaaS, AI, e-commerce — built precisely and fast.",
+    },
+  };
+}
 
 const Home = () => {
   return (
     <>
-      <section className="relative z-10 flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-[#151A2C] pt-36 text-center text-white">
+      <section className="bg-brand-dark relative z-10 flex min-h-screen w-full flex-col items-center justify-center overflow-hidden pt-36 text-center text-white">
         <div className="pointer-events-none absolute top-0 left-1/2 h-50 w-150 -translate-x-1/2 bg-[radial-gradient(circle,rgba(9,93,255,1),rgba(191,9,255,0.3))] blur-3xl" />
         <div className="pointer-events-none absolute top-0 left-0 h-50 w-75 -translate-x-1/2 bg-[radial-gradient(circle,rgba(9,93,255,0.5),rgba(191,9,255,0))] opacity-40 blur-2xl" />
         <div className="pointer-events-none absolute top-[90vh] left-0 h-75 w-150 translate-x-[-50%] bg-[radial-gradient(circle,rgba(9,93,255,0.5),rgba(191,9,255,0))] blur-3xl" />
@@ -25,59 +43,30 @@ const Home = () => {
           className="absolute top-120 left-190 -translate-x-1/2 -translate-y-1/2 -rotate-4 opacity-70 blur-2xl"
           priority
         />
+
         <HomeClient />
+
         <hr className="mt-20 mb-12.5 w-7xl border-t border-dashed border-white/20" />
 
-        <div className="flex flex-wrap justify-center opacity-100">
-          <Image
-            src="/brands/lg1.png"
-            alt="logo1"
-            width={149.1}
-            height={72}
-            priority
-          />
-          <Image
-            src="/brands/lg2.png"
-            alt="logo2"
-            width={149.1}
-            height={72}
-            priority
-          />
-          <Image
-            src="/brands/lg3.png"
-            alt="logo3"
-            width={149.1}
-            height={72}
-            priority
-          />
-          <Image
-            src="/brands/lg4.png"
-            alt="logo4"
-            width={149.1}
-            height={72}
-            priority
-          />
-          <Image
-            src="/brands/lg5.png"
-            alt="logo5"
-            width={149.1}
-            height={72}
-            priority
-          />
-          <Image
-            src="/brands/lg6.png"
-            alt="logo6"
-            width={149.1}
-            height={72}
-            priority
-          />
-          <Image
-            src="/brands/lg7.png"
-            alt="logo7"
-            width={149.1}
-            height={72}
-            priority
-          />
+        <div className="flex flex-wrap justify-center">
+          {[
+            "lg1.png",
+            "lg2.png",
+            "lg3.png",
+            "lg4.png",
+            "lg5.png",
+            "lg6.png",
+            "lg7.png",
+          ].map((logo) => (
+            <Image
+              key={logo}
+              src={`/brands/${logo}`}
+              alt={logo.replace(".png", "")}
+              width={142}
+              height={72}
+              priority
+            />
+          ))}
         </div>
 
         <hr className="mt-12.5 w-7xl border-t border-dashed border-white/20" />
@@ -88,10 +77,12 @@ const Home = () => {
         <InnovateTechMain id="innovate" />
         <FeatureMain id="features" />
         <ContactScreen id="contact" />
+
         <div className="pointer-events-none relative flex h-0 w-full justify-center">
           <div className="absolute -bottom-37.5 left-0 z-0 h-100 w-[500] bg-[radial-gradient(circle,rgba(9,93,255,1),rgba(191,9,255,0.3))] opacity-40 blur-3xl" />
         </div>
       </section>
+
       <Footer />
     </>
   );

@@ -1,46 +1,27 @@
 "use client";
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { CONTACT_US_STRINGS } from "@/utils/constants";
 import { SectionProps } from "@/types";
+import { useContactAnimations } from "@/hooks/useContactAnimations";
 
 function ContactScreen({ id }: SectionProps) {
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const nameInputRef = useRef<HTMLInputElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start 50%", "center center"],
-  });
-
-  const cartoonScale = useTransform(scrollYProgress, [0, 0.5], [0.6, 1]);
-
-  const cartoonY = useTransform(scrollYProgress, [0, 0.5], [60, 0]);
-  const cartoonOpacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
-
-  const formY = useTransform(scrollYProgress, [0, 0.5], [-60, 0]);
-
-  //envelope icon
-
-  const envelopeY = useTransform(
-    scrollYProgress,
-    [0.05, 0.35, 0.33],
-    [-140, -60, 0]
-  );
-
-  const envelopeX = useTransform(scrollYProgress, [0.35, 0.37], [60, 60]);
-
-  const envelopeScale = useTransform(scrollYProgress, [0.05, 0.24], [1, 0.8]);
-
-  const envelopeOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0.8]);
-
-  const blur = useTransform(scrollYProgress, [0, 0.05, 0.33], [0, 0, 0.5]);
-  const blurFilter = useTransform(blur, (v) => `blur(${v}px)`);
-
-  const formOverflow = useTransform(scrollYProgress, (pos) =>
-    pos >= 0.37 ? "hidden" : "visible"
-  );
+  const {
+    cartoonScale,
+    cartoonY,
+    cartoonOpacity,
+    formY,
+    formOverflow,
+    envelopeY,
+    envelopeX,
+    envelopeScale,
+    envelopeOpacity,
+    blurFilter,
+  } = useContactAnimations(sectionRef);
 
   return (
     <div
@@ -49,7 +30,7 @@ function ContactScreen({ id }: SectionProps) {
       className="relative z-30 mt-10 mb-40 w-full px-6 md:px-10 lg:px-20"
     >
       <div className="relative mx-auto min-h-190 w-full max-w-330 rounded-[40px] shadow-2xl lg:rounded-[80px]">
-        <div className="absolute inset-0 z-0 flex flex-col overflow-hidden rounded-[40px] bg-[#AACFFE] lg:flex-row lg:rounded-[80px]">
+        <div className="bg-contact-bg absolute inset-0 z-0 flex flex-col overflow-hidden rounded-[40px] lg:flex-row lg:rounded-[80px]">
           <div className="absolute inset-0 lg:relative lg:h-190 lg:w-210 lg:shrink-0">
             <Image
               src="/contact/formBg.png"
@@ -86,7 +67,8 @@ function ContactScreen({ id }: SectionProps) {
               {CONTACT_US_STRINGS.DESCRIPTION}
             </p>
 
-            <div className="mt-6 flex max-h-30 w-full max-w-105 flex-col gap-4 rounded-lg bg-[#A0FB8E]/60 px-6 py-5 text-white shadow-lg backdrop-blur-sm">
+            {/* Contact info card */}
+            <div className="bg-green-bg mt-6 flex max-h-30 w-full max-w-105 flex-col gap-4 rounded-lg px-6 py-5 text-white shadow-lg backdrop-blur-sm">
               <div className="flex items-center justify-between gap-3 border-b border-black/10 pb-4 text-sm">
                 <span className="flex items-center gap-2">
                   <Image
@@ -151,7 +133,7 @@ function ContactScreen({ id }: SectionProps) {
               />
             </motion.div>
 
-            {/* Form Content */}
+            {/* Form content */}
             <div className="relative z-10">
               <h3 className="font-sora mb-5 text-left text-[24px] font-semibold text-black">
                 {CONTACT_US_STRINGS.FORM.HEADER}
@@ -161,10 +143,10 @@ function ContactScreen({ id }: SectionProps) {
                 <label className="font-sora text-left text-[12px] font-medium text-black">
                   {CONTACT_US_STRINGS.FORM.NAME}
                   <input
+                    ref={nameInputRef}
                     type="text"
                     name="name"
                     className="mt-1 h-9 w-full rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all"
-                    required
                   />
                 </label>
 
@@ -174,7 +156,6 @@ function ContactScreen({ id }: SectionProps) {
                     type="email"
                     name="email"
                     className="mt-1 h-9 w-full rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all"
-                    required
                   />
                 </label>
 
@@ -184,7 +165,6 @@ function ContactScreen({ id }: SectionProps) {
                     type="tel"
                     name="phone"
                     className="mt-1 h-9 w-full rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all"
-                    required
                   />
                 </label>
 
@@ -194,7 +174,6 @@ function ContactScreen({ id }: SectionProps) {
                     type="text"
                     name="lookingFor"
                     className="mt-1 h-9 w-full rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all"
-                    required
                   />
                 </label>
 
@@ -204,13 +183,12 @@ function ContactScreen({ id }: SectionProps) {
                     name="message"
                     rows={4}
                     className="mt-1 w-full resize-none rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all"
-                    required
                   />
                 </label>
 
                 <button
-                  type="submit"
-                  className="h-14 w-full rounded-[80px] bg-black text-sm font-medium text-white shadow-lg transition-all hover:bg-gray-900 hover:shadow-xl active:scale-[0.98]"
+                  type="button"
+                  className="h-14 w-full cursor-pointer rounded-[80px] bg-black text-sm font-medium text-white shadow-lg transition-all hover:bg-gray-900 hover:shadow-xl active:scale-[0.98]"
                 >
                   {CONTACT_US_STRINGS.FORM.SEND}
                 </button>

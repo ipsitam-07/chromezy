@@ -85,7 +85,7 @@ function OurClients({ id }: SectionProps) {
             {CLIENT_SECTION_STRINGS.TITLE}
           </h2>
 
-          <p className="max-w-150 text-[clamp(14px,3vw,16px)] font-normal tracking-wide text-[#ffffffcc]">
+          <p className="max-w-150 text-[clamp(14px,3vw,16px)] font-normal tracking-wide text-white/70">
             {CLIENT_SECTION_STRINGS.DESCRIPTION}
           </p>
         </div>

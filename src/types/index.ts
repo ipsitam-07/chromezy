@@ -33,6 +33,11 @@ export interface FeatureCardPropsWithIndex extends FeaturedCardProps {
   index: number;
 }
 
+export interface ErrorPageProps {
+  error: Error & { digest?: string };
+  reset: () => void;
+}
+
 //Data Model Types
 
 export interface ServiceCardData {

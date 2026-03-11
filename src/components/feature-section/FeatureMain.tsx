@@ -15,7 +15,7 @@ function FeatureMain({ id }: SectionProps) {
         <h2 className="block w-full text-left text-[clamp(32px,4vw,40px)] font-semibold tracking-tighter text-white uppercase">
           {FEATURE_STRINGS.HEADING}
         </h2>
-        <p className="max-w-150 text-[clamp(14px,3vw,16px)] font-normal tracking-wide text-[#ffffffcc]">
+        <p className="max-w-150 text-[clamp(14px,3vw,16px)] font-normal tracking-wide text-white/70">
           {FEATURE_STRINGS.DESCRIPTION}
         </p>
       </div>

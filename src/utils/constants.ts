@@ -66,6 +66,7 @@ export const INNOVATIVE_STRINGS = {
   HEADING: "INNOVATIVE TECHNOLOGIES KEEPING US AHEAD",
   DESCRIPTION:
     "Discover the impact of bespoke digital solutions tailored precisely to your business's distinct requirements.",
+  LOADING: "Loading technologies…",
 } as const;
 
 //Featured Insights Section
@@ -138,3 +139,17 @@ export const SCROLL_DIRECTION = {
   LEFT: "left",
   RIGHT: "right",
 } as const;
+
+export const ERROR_PAGE = {
+  SOMETHING_WENT_WRONG: "Something went wrong",
+  ERROR_OCCURRED: "An unexpected error occurred. Please try again.",
+  TRY_AGAIN: "Try again",
+} as const;
+
+export const NOT_FOUND_PAGE = {
+  STATUS_CODE: "404",
+  NOT_FOUND: "Page not found",
+  DOES_NOT_EXIST:
+    "The page you are looking for does not exist or has been moved.",
+  BACK_TO_HOME: "Back to home",
+};

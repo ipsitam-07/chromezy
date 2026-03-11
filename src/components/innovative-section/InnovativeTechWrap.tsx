@@ -16,7 +16,7 @@ function InnvovativeTechWrap() {
           <h2 className="block w-full pr-10 text-left text-[clamp(32px,4vw,40px)] leading-12.5 font-semibold tracking-tighter text-white uppercase">
             {INNOVATIVE_STRINGS.HEADING}
           </h2>
-          <p className="max-w-150 pt-5 text-left text-[clamp(14px,3vw,16px)] leading-6 font-normal tracking-wide text-[#ffffffcc]">
+          <p className="max-w-150 pt-5 text-left text-[clamp(14px,3vw,16px)] leading-6 font-normal tracking-wide text-white/70">
             {INNOVATIVE_STRINGS.DESCRIPTION}
           </p>
         </div>

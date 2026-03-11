@@ -1,4 +1,4 @@
-export default {
+const commitlintConfig = {
   extends: ["@commitlint/config-conventional"],
   rules: {
     "type-enum": [
@@ -34,3 +34,5 @@ export default {
     "footer-max-line-length": [2, "always", 100],
   },
 };
+
+export default commitlintConfig;
