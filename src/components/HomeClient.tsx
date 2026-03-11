@@ -1,163 +1,30 @@
 "use client";
-
 import Image from "next/image";
-import { useLayoutEffect, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { HOME_STRINGS } from "@/utils/constants";
 import { STATS_DATA } from "@/mock";
-import { SectionProps } from "@/types";
+import { SectionProps, StatData } from "@/types";
+import { useHeroAnimations } from "@/hooks/useHeroAnimation";
 
 function HomeClient({ id }: SectionProps) {
-  const { scrollY } = useScroll();
-  const [viewportHeight, setViewportHeight] = useState(1000);
-
-  useLayoutEffect(() => {
-    const handleResize = () => {
-      setViewportHeight(window.innerHeight);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  //Ball animation
-  const x = useTransform(
-    scrollY,
-    [
-      0,
-      viewportHeight,
-      viewportHeight * 4,
-      viewportHeight * 5,
-      viewportHeight * 6,
-      viewportHeight * 6 + viewportHeight / 4,
-      viewportHeight * 7,
-    ],
-    [570, 420, 417, 145, 100, -100, -100]
-  );
-
-  const y = useTransform(
-    scrollY,
-    [
-      0,
-      viewportHeight,
-      viewportHeight * 1.25,
-      viewportHeight * 2,
-      viewportHeight * 3,
-      viewportHeight * 4,
-      viewportHeight * 5.25,
-      viewportHeight * 6,
-    ],
-    [100, 215, 215, -85, 115, 135, 250, 40]
-  );
-
-  const scale = useTransform(
-    scrollY,
-    [
-      viewportHeight,
-      viewportHeight + viewportHeight / 4,
-      viewportHeight * 2,
-      viewportHeight * 3,
-      viewportHeight * 4,
-      viewportHeight * 5,
-      viewportHeight * 6,
-      viewportHeight * 6 + viewportHeight / 4,
-      viewportHeight * 7,
-    ],
-    [1, 2, 1, 1.9, 2, 1.3, 1, 0.5, 0.5]
-  );
-
-  const ballOpacity = useTransform(
-    scrollY,
-    [
-      viewportHeight * 3,
-      viewportHeight * 3 + viewportHeight / 2,
-      viewportHeight * 5,
-      viewportHeight * 6,
-      viewportHeight * 7,
-    ],
-    [1, 0.15, 1, 1, 0]
-  );
-
-  const ballBlur = useTransform(
-    scrollY,
-    [viewportHeight + viewportHeight / 4, viewportHeight * 2],
-    ["blur(0px)", "blur(10px)"]
-  );
-
-  const textOpacity = useTransform(scrollY, [0, viewportHeight * 1.5], [1, 0]);
-
-  const yTransformHeader = useTransform(
-    scrollY,
-    [0, viewportHeight],
-    [0, -100]
-  );
-
-  const yTransformSubheading = useTransform(
-    scrollY,
-    [0, viewportHeight],
-    [0, -150]
-  );
-
-  const yTransformParagraph = useTransform(
-    scrollY,
-    [0, viewportHeight],
-    [0, -200]
-  );
-
-  const yTransformStats = useTransform(scrollY, [0, viewportHeight], [0, -250]);
-
-  //traingle animation
-  const triangleY = useTransform(
-    scrollY,
-    [
-      0,
-      viewportHeight,
-      viewportHeight + viewportHeight / 4,
-      viewportHeight * 2,
-    ],
-    [70, 70 - 100, 70 - 100, 100]
-  );
-
-  const triangleX = useTransform(
-    scrollY,
-    [0, viewportHeight, viewportHeight * 2, viewportHeight * 4],
-    [-800, -800 + 50, -650, -850]
-  );
-
-  const triangleScale = useTransform(
-    scrollY,
-    [
-      0,
-      viewportHeight,
-      viewportHeight + viewportHeight / 4,
-      viewportHeight * 2,
-      viewportHeight * 3,
-    ],
-    [1, 0.5, 0.24, 0.7, 1]
-  );
-
-  const triangleFilter = useTransform(
-    scrollY,
-    [
-      0,
-      viewportHeight,
-      viewportHeight + viewportHeight / 4,
-      viewportHeight * 2,
-    ],
-    ["blur(10px)", "blur(20px)", "blur(20px)", "blur(10px)"]
-  );
-
-  const triangleOpacity = useTransform(
-    scrollY,
-    [viewportHeight * 3, viewportHeight * 3 + viewportHeight / 1],
-    [1, 0]
-  );
-
-  const productEngineeringOpacity = useTransform(
-    scrollY,
-    [viewportHeight / 2, viewportHeight, viewportHeight + 1],
-    [0, 1, 1]
-  );
+  const {
+    ballX,
+    ballY,
+    ballScale,
+    ballOpacity,
+    ballBlur,
+    triangleY,
+    triangleX,
+    triangleScale,
+    triangleFilter,
+    triangleOpacity,
+    textOpacity,
+    yTransformHeader,
+    yTransformSubheading,
+    yTransformParagraph,
+    yTransformStats,
+    productEngineeringOpacity,
+  } = useHeroAnimations();
 
   return (
     <>
@@ -184,9 +51,9 @@ function HomeClient({ id }: SectionProps) {
       <motion.div
         className="fixed"
         style={{
-          y,
-          x,
-          scale,
+          y: ballY,
+          x: ballX,
+          scale: ballScale,
           filter: ballBlur,
           opacity: ballOpacity,
           top: 0,
@@ -242,13 +109,13 @@ function HomeClient({ id }: SectionProps) {
 
         <motion.div style={{ y: yTransformStats, opacity: textOpacity }}>
           <div className="mt-18 mb-4 grid grid-cols-2 gap-8 md:grid-cols-4">
-            {STATS_DATA.map((stat, i) => (
+            {STATS_DATA.map((stat: StatData, i: number) => (
               <Stat key={i} value={stat.value} label={stat.label} />
             ))}
           </div>
         </motion.div>
 
-        <motion.div style={{ opacity: productEngineeringOpacity }}></motion.div>
+        <motion.div style={{ opacity: productEngineeringOpacity }} />
       </div>
     </>
   );

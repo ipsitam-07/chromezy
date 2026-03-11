@@ -47,7 +47,7 @@ export default function FeaturedCard({
             />
           </div>
         </div>
-        <p className="text-left text-sm text-[#FFFFFF99]">{description}</p>
+        <p className="text-left text-sm text-gray-300">{description}</p>
       </div>
     </motion.div>
   );

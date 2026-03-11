@@ -1,38 +1,24 @@
 "use client";
 import { useRef } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import ServiceCard from "./ProductServiceCard";
 import { LAYOUT_CONSTANTS } from "@/utils/constants";
 import { SERVICE_CARD_CONTENT } from "@/mock";
 import { SectionProps } from "@/types";
+import { useProductAnimations } from "@/hooks/useProductAnimations";
 
 function ProductEngineering({ id }: SectionProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-
-  const yBall = useTransform(scrollYProgress, [0.3, 0.9], [100, -400]);
-
-  const opacityBall = useTransform(scrollYProgress, [0.3, 0.55], [1, 1]);
-
-  const scaleBall = useTransform(scrollYProgress, [0.3, 0.6], [1.8, 0.8]);
-
-  const scaleBlur = useTransform(
-    scrollYProgress,
-    [0.3, 0.6],
-    ["blur(3px)", "blur(6px)"]
-  );
-  const yContent = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const { yBall, opacityBall, scaleBall, scaleBlur, yContent } =
+    useProductAnimations(containerRef);
 
   return (
     <section
       id={id}
       ref={containerRef}
-      className={`font-sora relative z-30 mt-32 w-full px-6 antialiased md:px-10 lg:px-20`}
+      className="font-sora relative z-30 mt-32 w-full px-6 antialiased md:px-10 lg:px-20"
     >
       <div className="pointer-events-none absolute top-0 left-1/2 h-100 w-100 -translate-x-1/2 bg-[radial-gradient(circle,rgba(45,20,95,0.8)_0%,rgba(15,10,30,0)_70%)] blur-3xl" />
 
@@ -62,7 +48,7 @@ function ProductEngineering({ id }: SectionProps) {
           {LAYOUT_CONSTANTS.SECTION_TITLE}
         </h2>
 
-        <p className="max-w-180 text-left text-[clamp(14px,3vw,16px)] leading-relaxed font-light tracking-wide text-[#ffffffcc]">
+        <p className="max-w-180 text-left text-[clamp(14px,3vw,16px)] leading-relaxed font-light tracking-wide text-white/70">
           {LAYOUT_CONSTANTS.SECTION_DESCRIPTION}
         </p>
       </motion.div>

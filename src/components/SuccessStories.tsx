@@ -16,7 +16,7 @@ function SuccessStories({ id }: SectionProps) {
           <h2 className="block w-full pr-40 text-left text-[clamp(32px,4vw,40px)] leading-13 font-semibold tracking-tighter text-white uppercase">
             {SUCCESS_STRING.HEADING}
           </h2>
-          <p className="max-w-150 text-left text-[clamp(14px,3vw,16px)] font-normal tracking-wide text-[#ffffffcc]">
+          <p className="max-w-150 text-left text-[clamp(14px,3vw,16px)] font-normal tracking-wide text-white/70">
             {SUCCESS_STRING.DESCRIPTION}
           </p>
         </div>
