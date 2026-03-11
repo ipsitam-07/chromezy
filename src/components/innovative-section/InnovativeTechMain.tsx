@@ -4,7 +4,7 @@ import InnvovativeTechWrap from "./InnovativeTechWrap";
 import InnovativeTechStack from "./InnovativeTechStack";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { SectionProps } from "../interfaces/props";
+import { SectionProps } from "@/types";
 
 function InnovateTechMain({ id }: SectionProps) {
   const containerRef = useRef(null);

@@ -2,7 +2,8 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { NAVBAR_LABELS, navItems } from "@/utils/constants";
+import { NAVBAR_LABELS } from "@/utils/constants";
+import { NAV_ITEMS } from "@/mock";
 
 function Navbar() {
   const [activeSection, setActiveSection] = useState<string>("home");
@@ -29,7 +30,7 @@ function Navbar() {
         rootMargin: "-50% 0px -50% 0px",
       }
     );
-    navItems.forEach((item) => {
+    NAV_ITEMS.forEach((item) => {
       if (item.target && item.id !== "home") {
         const section = document.getElementById(item.target);
         if (section) observer.observe(section);
@@ -79,7 +80,7 @@ function Navbar() {
           </div>
 
           <ul className="absolute left-1/2 flex w-130 -translate-x-1/2 transform items-center justify-center gap-8 border-b border-white/10 pb-2">
-            {navItems.map((eachItem) => {
+            {NAV_ITEMS.map((eachItem) => {
               const isHome = eachItem.id === "home";
               const active =
                 activeSection === (isHome ? "home" : eachItem.target);

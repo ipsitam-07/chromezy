@@ -3,8 +3,9 @@ import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ServiceCard from "./ProductServiceCard";
-import { LAYOUT_CONSTANTS, SERVICE_CARD_CONTENT } from "@/utils/constants";
-import { SectionProps } from "../interfaces/props";
+import { LAYOUT_CONSTANTS } from "@/utils/constants";
+import { SERVICE_CARD_CONTENT } from "@/mock";
+import { SectionProps } from "@/types";
 
 function ProductEngineering({ id }: SectionProps) {
   const containerRef = useRef<HTMLDivElement>(null);

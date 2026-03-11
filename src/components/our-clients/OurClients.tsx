@@ -7,8 +7,9 @@ import {
 } from "framer-motion";
 import { useRef, useState, useLayoutEffect } from "react";
 import TestimonialCard from "./TestimonialCards";
-import { TESTIMONIALS, CLIENT_SECTION_STRINGS } from "@/utils/constants";
-import { SectionProps } from "../interfaces/props";
+import { TESTIMONIALS } from "@/mock";
+import { SectionProps, ScrollDirection } from "@/types";
+import { CLIENT_SECTION_STRINGS, SCROLL_DIRECTION } from "@/utils/constants";
 
 function OurClients({ id }: SectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -49,11 +50,11 @@ function OurClients({ id }: SectionProps) {
       }
     }
   });
-  const scroll = (direction: "left" | "right") => {
+  const scroll = (direction: ScrollDirection) => {
     if (scrollContainerRef.current) {
       const { scrollLeft, clientWidth } = scrollContainerRef.current;
       const scrollTo =
-        direction === "left"
+        direction === SCROLL_DIRECTION.LEFT
           ? scrollLeft - clientWidth / 2
           : scrollLeft + clientWidth / 2;
 
@@ -91,7 +92,7 @@ function OurClients({ id }: SectionProps) {
 
         <div className="relative z-50 mt-6 flex items-center gap-2 max-sm:hidden md:mt-0">
           <button
-            onClick={() => scroll("left")}
+            onClick={() => scroll(SCROLL_DIRECTION.LEFT)}
             className="nextBtn m-2 flex h-10 w-10 cursor-pointer items-center justify-center rounded-[50%] bg-[#40424C] transition-colors hover:bg-[#50525C] active:scale-95"
             aria-label="Previous testimonial"
           >
@@ -115,7 +116,7 @@ function OurClients({ id }: SectionProps) {
             </svg>
           </button>
           <button
-            onClick={() => scroll("right")}
+            onClick={() => scroll(SCROLL_DIRECTION.RIGHT)}
             className="prevBtn m-2 flex h-10 w-10 cursor-pointer items-center justify-center rounded-[50%] bg-[#40424C] transition-colors hover:bg-[#50525C] active:scale-95"
             aria-label="Next testimonial"
           >

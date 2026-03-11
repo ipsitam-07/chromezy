@@ -3,8 +3,9 @@
 import Image from "next/image";
 import { useLayoutEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { HOME_STRINGS, STATS_DATA } from "@/utils/constants";
-import { SectionProps } from "./interfaces/props";
+import { HOME_STRINGS } from "@/utils/constants";
+import { STATS_DATA } from "@/mock";
+import { SectionProps } from "@/types";
 
 function HomeClient({ id }: SectionProps) {
   const { scrollY } = useScroll();

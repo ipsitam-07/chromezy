@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FeatureCardPropsWithIndex } from "@/components/interfaces/props";
+import { FeatureCardPropsWithIndex } from "@/types";
 
 export default function FeaturedCard({
   imgSrc,

@@ -1,7 +1,7 @@
 import { FEATURE_STRINGS } from "@/utils/constants";
 import FeaturedCard from "./FeatureCard";
-import { INSIGHTS } from "@/utils/constants";
-import { SectionProps } from "../interfaces/props";
+import { INSIGHTS } from "@/mock";
+import { SectionProps } from "@/types";
 
 function FeatureMain({ id }: SectionProps) {
   return (

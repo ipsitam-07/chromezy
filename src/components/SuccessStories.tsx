@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { STORIES, SUCCESS_STRING } from "@/utils/constants";
-import { SectionProps } from "./interfaces/props";
+import { SUCCESS_STRING } from "@/utils/constants";
+import { STORIES } from "@/mock";
+import { SectionProps } from "@/types";
 
 function SuccessStories({ id }: SectionProps) {
   return (

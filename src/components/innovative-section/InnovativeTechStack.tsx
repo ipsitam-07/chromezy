@@ -1,6 +1,6 @@
 "use client";
 import InnovativeTechIcon from "./InnovativeTechIcon";
-import { CATEGORIES } from "@/utils/constants";
+import { CATEGORIES } from "@/mock";
 import { motion } from "framer-motion";
 
 function InnovativeTechStack() {
