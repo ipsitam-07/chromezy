@@ -38,6 +38,10 @@ export interface ErrorPageProps {
   reset: () => void;
 }
 
+export interface SuccessModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
 //Data Model Types
 
 export interface ServiceCardData {

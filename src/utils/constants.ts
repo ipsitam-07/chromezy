@@ -152,4 +152,11 @@ export const NOT_FOUND_PAGE = {
   DOES_NOT_EXIST:
     "The page you are looking for does not exist or has been moved.",
   BACK_TO_HOME: "Back to home",
-};
+} as const;
+
+export const SUCCESS_MODAL = {
+  HEADER: "Successfully Sent!",
+  DESCRIPTION:
+    "Thank you for reaching out. Our team will review your message and get back to you shortly.",
+  OKAY: "Okay",
+} as const;
