@@ -22,6 +22,9 @@ export async function generateMetadata(): Promise<Metadata> {
       description:
         "Software engineering and digital transformation. " +
         "MVP, SaaS, AI, e-commerce — built precisely and fast.",
+      url: "https://chromezy-ten.vercel.app",
+      siteName: "Chromezy",
+      type: "website",
     },
   };
 }
