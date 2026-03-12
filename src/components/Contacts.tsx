@@ -10,6 +10,13 @@ function ContactScreen({ id }: SectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const nameInputRef = useRef<HTMLInputElement>(null);
 
+  const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    e.currentTarget.reset();
+    nameInputRef.current?.focus();
+    console.log("Form Submitted.");
+  };
+
   const {
     cartoonScale,
     cartoonY,
@@ -128,6 +135,7 @@ function ContactScreen({ id }: SectionProps) {
               <Image
                 src="/line-mail.png"
                 fill
+                sizes="(max-width: 1024px) 50px, 200px"
                 alt="envelope-bg"
                 className="object-contain"
               />
@@ -139,14 +147,18 @@ function ContactScreen({ id }: SectionProps) {
                 {CONTACT_US_STRINGS.FORM.HEADER}
               </h3>
 
-              <form className="flex flex-col gap-5" noValidate>
+              <form
+                className="flex flex-col gap-5"
+                onSubmit={handleSubmit}
+                noValidate
+              >
                 <label className="font-sora text-left text-[12px] font-medium text-black">
                   {CONTACT_US_STRINGS.FORM.NAME}
                   <input
                     ref={nameInputRef}
                     type="text"
                     name="name"
-                    className="mt-1 h-9 w-full rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all"
+                    className="mt-1 h-9 w-full rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all focus:outline-none"
                   />
                 </label>
 
@@ -155,7 +167,7 @@ function ContactScreen({ id }: SectionProps) {
                   <input
                     type="email"
                     name="email"
-                    className="mt-1 h-9 w-full rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all"
+                    className="mt-1 h-9 w-full rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all focus:outline-none"
                   />
                 </label>
 
@@ -164,7 +176,7 @@ function ContactScreen({ id }: SectionProps) {
                   <input
                     type="tel"
                     name="phone"
-                    className="mt-1 h-9 w-full rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all"
+                    className="mt-1 h-9 w-full rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all focus:outline-none"
                   />
                 </label>
 
@@ -173,7 +185,7 @@ function ContactScreen({ id }: SectionProps) {
                   <input
                     type="text"
                     name="lookingFor"
-                    className="mt-1 h-9 w-full rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all"
+                    className="mt-1 h-9 w-full rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all focus:outline-none"
                   />
                 </label>
 
@@ -182,12 +194,12 @@ function ContactScreen({ id }: SectionProps) {
                   <textarea
                     name="message"
                     rows={4}
-                    className="mt-1 w-full resize-none rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all"
+                    className="mt-1 w-full resize-none rounded-[4px] border border-gray-200 bg-white/60 p-3 text-sm transition-all focus:outline-none"
                   />
                 </label>
 
                 <button
-                  type="button"
+                  type="submit"
                   className="h-14 w-full cursor-pointer rounded-[80px] bg-black text-sm font-medium text-white shadow-lg transition-all hover:bg-gray-900 hover:shadow-xl active:scale-[0.98]"
                 >
                   {CONTACT_US_STRINGS.FORM.SEND}
