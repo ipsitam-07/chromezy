@@ -52,7 +52,7 @@ export function useContactAnimations(
   const envelopeY = useTransform(
     scrollYProgress,
     [0.05, 0.33, 0.35],
-    [-140, -60, 0]
+    [-140, -60, -60]
   );
 
   const envelopeX = useTransform(scrollYProgress, [0.35, 0.37], [60, 60]);
